@@ -74,7 +74,7 @@ export class DiscordClient extends Client {
     }
     public async startClient() {
         this.login(this.config.bot.token).catch((error) => {
-            logger.error(`Failed to log into the user client.`, error);
+            logger.error(`Failed to log into user client.`, error);
         });
     }
 }
