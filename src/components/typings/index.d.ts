@@ -7,8 +7,10 @@ export type GuildArray = Array[{ name: string; category: string; id: string }];
 export interface ConfigInterface {
     bot: {
         token: string;
-        id: string;
-        secret: string;
+        client: {
+            id: string;
+            secret: string;
+        };
     };
     avatars: {
         default: string;
@@ -26,7 +28,7 @@ export interface ConfigInterface {
 }
 
 export interface EventInterface {
-    name: keyof ClientEvents
+    name: keyof ClientEvents;
     options: { rest: boolean; once: boolean };
     execute: (...args: any[]) => any;
 }

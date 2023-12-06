@@ -8,13 +8,12 @@ const event: EventInterface = {
     options: { once: true, rest: false },
     execute: async (client: DiscordClient) => {
         const clientSettings = await client.db.client.findUnique({ where: { clientid: client.user?.id } });
-        if (!clientSettings) {
+        if (!clientSettings)
             await client.db.client.upsert({
                 where: { clientid: client.user?.id },
                 create: { clientid: client.user?.id as string, maintenance: false, blacklistedGuilds: [''] },
                 update: { maintenance: false, blacklistedGuilds: [''] },
             });
-        }
 
         const config = client.config;
         const avatars = new Map([

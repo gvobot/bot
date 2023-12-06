@@ -18,13 +18,11 @@ const event: EventInterface = {
                     language: 'en-US',
                     themeColor: client.config.colors.theme,
                     isMembership: false,
-                    featured: false,
                 },
                 update: {
                     language: 'en-US',
                     themeColor: client.config.colors.theme,
                     isMembership: false,
-                    featured: false,
                 },
             });
         }

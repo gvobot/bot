@@ -47,10 +47,6 @@ const event: EventInterface = {
                 return interaction.reply({
                     embeds: [
                         embed.setDescription(
-                            // translate('commands.cooldown', {
-                            //     commandName: command.data.name,
-                            //     expiredTimestamp: expiredTimestamp,
-                            // }),
                             i18next.t('interactionCreate.command.cooldown', {
                                 ns: 'events',
                                 commandName: command.data.name,

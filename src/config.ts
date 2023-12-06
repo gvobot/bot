@@ -1,14 +1,16 @@
 import { ColorResolvable } from 'discord.js';
 import { ConfigInterface } from './components/typings/index.js';
 import dotenv from 'dotenv';
-dotenv.config({ path: '../../.env' });
+dotenv.config({ path: '../.env' });
 
-export const defaultLanguage: string = "en-US"
+export const defaultLanguage: string = 'en-US';
 export const config: ConfigInterface = {
     bot: {
         token: process.env.DISCORD_BOT_TOKEN as string,
-        id: process.env.DISCORD_BOT_ID as string,
-        secret: process.env.DISCORD_BOT_SECRET as string,
+        client: {
+            id: process.env.DISCORD_BOT_ID as string,
+            secret: process.env.DISCORD_BOT_SECRET as string,
+        },
     },
     avatars: {
         default: 'https://github.com/gvobot/branding/blob/main/avatars/crystal_ball_blush.png?raw=true',
