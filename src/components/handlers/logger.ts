@@ -27,13 +27,13 @@ export const logger = createLogger({
     ),
     transports: [
         new transports.Console(),
-        new transports.File({ filename: '../../logs/bot/info.log', level: 'info' }),
-        new transports.File({ filename: '../../logs/bot/error.log', level: 'error' }),
-        new transports.File({ filename: '../../logs/bot/success.log', level: 'success' }),
-        new transports.File({ filename: '../../logs/bot/warning.log', level: 'warning' }),
-        new transports.File({ filename: '../../logs/bot/bot.log' }),
+        new transports.File({ filename: './logs/bot/info.log', level: 'info' }),
+        new transports.File({ filename: './logs/bot/error.log', level: 'error' }),
+        new transports.File({ filename: './logs/bot/success.log', level: 'success' }),
+        new transports.File({ filename: './logs/bot/warning.log', level: 'warning' }),
+        new transports.File({ filename: './logs/bot/bot.log' }),
     ],
-    exceptionHandlers: [new transports.Console(), new transports.File({ filename: '../../logs/bot/exceptions.log' })],
+    exceptionHandlers: [new transports.Console(), new transports.File({ filename: './logs/bot/exceptions.log' })],
 });
 
 wiston.addColors(loggerLevels.colors);
