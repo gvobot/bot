@@ -1,4 +1,4 @@
-import { DiscordClient } from '../../bot.js';
+// import { DiscordClient } from '../../bot.js';
 import { defaultLanguage } from "../../config.js";
 import { fileURLToPath } from 'node:url';
 import path, { dirname } from 'node:path';

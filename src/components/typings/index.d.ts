@@ -7,6 +7,10 @@ export type GuildArray = Array[{ name: string; category: string; id: string }];
 export interface ConfigInterface {
     bot: {
         token: string;
+        dashboard?: {
+            url: string,
+            key: string
+        },
         client: {
             id: string;
             secret: string;

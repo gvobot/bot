@@ -1,11 +1,11 @@
 import { ClusterManager, HeartbeatManager } from 'discord-hybrid-sharding';
 import { logger } from './components/handlers/logger.js';
 import dotenv from 'dotenv';
-dotenv.config({ path: '../../.env' });
+dotenv.config();
 
 export const DiscordToken = process.env.DISCORD_BOT_TOKEN;
 
-const manager = new ClusterManager(`./dist/bot.js`, {
+export const manager = new ClusterManager(`./dist/bot.js`, {
     totalShards: 'auto',
     shardsPerClusters: 2,
     // totalClusters: 7,

@@ -48,10 +48,11 @@ const event: EventInterface = {
             'shower',
             'cheerleader',
             'come get her',
-            "i don't f**k with you",
             'party girl',
             'in da club',
             'mockingbird',
+            "you & me",
+            "in my room",
         ];
         let presenceActivity: string;
         let presenceStatus: PresenceStatusData;
@@ -68,12 +69,8 @@ const event: EventInterface = {
                 clientAvatar = guildAvatar = avatars.get('halloween');
                 presenceActivity = 'Spooky Halloween 🎃👻';
                 presenceStatus = 'idle';
-            } else if (currentMonth === 12) {
-                if (currentDay >= 1 && currentDay < 25) {
-                    presenceActivity = 'Soon Christmas! 🎄🌟';
-                } else if (currentDay >= 25 && currentDay <= 31) {
-                    presenceActivity = 'Merry Christmas 🎄❄️';
-                }
+            } else if (currentDay >= 1 && currentDay <= 31) {
+                presenceActivity = 'Merry Christmas 🎄❄️';
                 clientAvatar = guildAvatar = avatars.get('christmas');
                 presenceStatus = 'idle';
             } else if (currentMonth === 1 && currentDay === 1) {

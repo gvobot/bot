@@ -1,12 +1,16 @@
 import { ColorResolvable } from 'discord.js';
 import { ConfigInterface } from './components/typings/index.js';
 import dotenv from 'dotenv';
-dotenv.config({ path: '../.env' });
+dotenv.config();
 
 export const defaultLanguage: string = 'en-US';
 export const config: ConfigInterface = {
     bot: {
         token: process.env.DISCORD_BOT_TOKEN as string,
+        dashboard: {
+            url: process.env.DASHBOARD_URL as string,
+            key: process.env.DBD_LICENSE_KEY as string
+        },
         client: {
             id: process.env.DISCORD_BOT_ID as string,
             secret: process.env.DISCORD_BOT_SECRET as string,
