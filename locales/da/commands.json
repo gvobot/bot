@@ -1,14 +1,14 @@
 {
     "ping": {
         "name": "ping",
-        "description": "Check if the bot is alive"
+        "description": "Tjek om botten er i live"
     },
     "sync": {
-        "name": "sync",
-        "description": "Synchronize any of our modules to work on your server.",
+        "name": "synkroniser",
+        "description": "Synkroniser et af vores moduler til at fungere på din server.",
         "verification": {
-            "name": "verification",
-            "description": "Synchronize the verification system."
+            "name": "verifikation",
+            "description": "Synkronisér verifikationssystemet."
         }
     }
 }
