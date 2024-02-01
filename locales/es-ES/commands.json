@@ -3,32 +3,12 @@
         "name": "ping",
         "description": "Check if the bot is alive"
     },
-    "restrict": {
-        "name": "restrict",
-        "description": "Restrict a server or a user from using this bot.",
-        "server": {
-            "name": "server",
-            "description": "Restrict a server from using this bot",
-            "guildId": {
-                "name": "guildId",
-                "description": "Please provide a valid guildId"
-            },
-            "restrict": {
-                "name": "restrict",
-                "description": "Set if you want this server to be restricted or not"
-            }
-        },
-        "user": {
-            "name": "user",
-            "description": "Restrict a user from using this bot",
-            "userId": {
-                "name": "userid",
-                "description": "Please provide a valid userId"
-            },
-            "restrict": {
-                "name": "restrict",
-                "description": "Set if you want this user to be restricted or not"
-            }
+    "sync": {
+        "name": "sync",
+        "description": "Synchronize any of our modules to work on your server.",
+        "verification": {
+            "name": "verification",
+            "description": "Synchronize the verification system."
         }
     }
 }
