@@ -2,52 +2,52 @@
     "guildGate": {
         "message": {
             "embed": {
-                "author": "{{guild_name}} - Verification",
+                "author": "{{guild_name}} - Verifikation",
                 "description": {
-                    "value1": "Welcome to the verification process in **{{guild_name}}**!",
-                    "value2": "To ensure a secure and enjoyable experience, we have implemented a verification system.",
-                    "value3": "Follow the instructions below to get started:",
-                    "value4": "\n1. Click the **\"Start Verification\"** button to begin the process.",
-                    "value5": "2. If you need more information, click the **\"Information\"** button.",
-                    "value6": "\nFeel free to reach out if you encounter any issues or have questions. Enjoy your time in **{{guild_name}}**!"
+                    "value1": "Velkommen til verifikationsprocessen i **{{guild_name}}**!",
+                    "value2": "For at sikre en sikker og fornøjelig oplevelse har vi implementeret et kontrolsystem.",
+                    "value3": "Følg instruktionerne nedenfor for at komme i gang:",
+                    "value4": "\n1. Klik på knappen **\"Start verifikation\"** for at starte processen.",
+                    "value5": "2. Hvis du har brug for mere information, klik på **\"Information\"** knappen.",
+                    "value6": "\nDu er velkommen til at nå ud, hvis du støder på problemer eller har spørgsmål. Nyd din tid i **{{guild_name}}**!"
                 }
             },
             "buttons": {
-                "start": "Start Verification",
+                "start": "Start Bekræftelse",
                 "info": "Information"
             }
         },
         "information": {
-            "author": "{{guild_name}} - Verification Information",
-            "description1": "To start the verification process, please make sure your direct messages are enabled for this server.",
-            "description2": "Here's how to enable direct messages for **{{guild_name}}**:",
-            "description3": "\n1. Click on the server name in the Discord app.",
-            "description4": "2. Select **\"Privacy Settings\"** from the dropdown menu.",
-            "description5": "3. In the **Privacy Settings**, ensure that **\"Direct-messages\"** is turned on.",
-            "description6": "\nOnce you've enabled direct messages, click the **\"Start Verification\"** button again.",
-            "description7": "\nIf you have any questions or encounter issues, feel free to ask for assistance."
+            "author": "{{guild_name}} - Verifikationsoplysninger",
+            "description1": "For at starte verifikationsprocessen, sørg venligst for at dine direkte beskeder er aktiveret for denne server.",
+            "description2": "Sådan aktiveres direkte beskeder for **{{guild_name}}**:",
+            "description3": "\n1. Klik på servernavnet i Discord appen.",
+            "description4": "2. Vælg **\"Privatlivsindstillinger\"** fra rullemenuen.",
+            "description5": "3. I **Privatlivsindstillinger**, sørg for, at **\"Direkte beskeder\"** er slået til.",
+            "description6": "\nNår du har aktiveret direkte beskeder, skal du klikke på knappen **\"Start verifikation\"** igen.",
+            "description7": "\nHvis du har spørgsmål eller støder på problemer, er du velkommen til at bede om hjælp."
         },
         "start": {
-            "sentDMToUser": "I've sent you a private message. Please proceed to check it and complete the verification process.",
-            "failedToFetchUser": "Failed to retrieve information for {{user_mention}}. Please try again later or contact a staff member if the issue persists.",
-            "failedToGetData": "I'm missing some necessary data to continue the verification process. Please reach out to a staff member for assistance.",
-            "moduleIsTurnedOff": "The verification module has been disabled, and I'm unable to continue the verification process. Please contact a staff member for assistance.",
+            "sentDMToUser": "Jeg har sendt dig en privat besked. Fortsæt venligst for at tjekke den og fuldføre verifikationsprocessen.",
+            "failedToFetchUser": "Kunne ikke hente information til {{user_mention}}. Prøv igen senere eller kontakt en medarbejder, hvis problemet fortsætter.",
+            "failedToGetData": "Jeg mangler nogle nødvendige data for at fortsætte verifikationsprocessen. Gå venligst ud til en ansat for at få hjælp.",
+            "moduleIsTurnedOff": "Verifikationsmodulet er blevet deaktiveret, og jeg er ikke i stand til at fortsætte verifikationsprocessen. Kontakt venligst en medarbejder for hjælp.",
             "captchaMessage": {
-                "description": "To ensure a secure environment in **{{guild_name}}**, please follow the instructions below to complete the verification process:",
+                "description": "For at sikre et sikkert miljø i **{{guild_name}}**, skal du følge instruktionerne nedenfor for at fuldføre verifikationsprocessen:",
                 "fields": {
-                    "name": "Verification Instructions:",
-                    "value1": "1. Type the traced colored characters from left to right.",
-                    "value2": "2. Ignore any decoy characters.",
-                    "value3": "3. Character cases (upper/lower) do not matter.",
-                    "value4": "4. You have 2 minutes to complete the verification."
+                    "name": "Verifikation Instruktioner:",
+                    "value1": "1. Skriv de sporede farvede tegn fra venstre mod højre.",
+                    "value2": "2. Ignorer alle lokkekarakter.",
+                    "value3": "3. Karaktertilfælde (øverst/nederst) betyder ikke noget.",
+                    "value4": "4. Du har 2 minutter til at fuldføre verifikationen."
                 }
             },
-            "disabledDirectMessages": "To initiate the verification process for **{{guild_name}}**, please enable your direct messages for this server. Click on the **Information** button for a quick guide on how to enable direct messages.",
-            "verificationPassed": "Welcome to **{{guild_name}}**! You now have access to the server. If you have any questions, feel free to ask.",
-            "failedToFindRole": "Oh no! I couldn't locate the verification role. Kindly get in touch with a staff member for assistance.",
-            "failedToPassVerification": "Oh no! It seems you didn't pass the verification stage. As a result, you've been kicked. Don't worry, you can join back and give it another shot. Feel free to try again!",
-            "kickReason": "{{user_global_name}} did not successfully pass the verification process.",
-            "wrongCaptchaCode": "Oh no! It seems the captcha code you provided is incorrect. Please double-check and try again."
+            "disabledDirectMessages": "For at påbegynde verifikationsprocessen for **{{guild_name}}**, skal du aktivere dine direkte beskeder til denne server. Klik på **Information** knappen for en hurtig guide til, hvordan du aktiverer direkte beskeder.",
+            "verificationPassed": "Velkommen til **{{guild_name}}**! Du har nu adgang til serveren. Hvis du har spørgsmål, er du velkommen til at spørge.",
+            "failedToFindRole": "Åh nej! Jeg kunne ikke finde verifikationsrollen. Vær sød at komme i kontakt med en medarbejder for hjælp.",
+            "failedToPassVerification": "Åh nej! Det ser ud til, at du ikke passerer verifikationsfasen. Som følge heraf er du blevet smidt ud. Bare rolig, du kan slutte dig tilbage og give det et andet skud. Du er velkommen til at prøve igen!",
+            "kickReason": "{{user_global_name}} har ikke bestået verifikationsprocessen.",
+            "wrongCaptchaCode": "Åh nej! Det ser ud til, at captcha koden du har angivet, er forkert. Dobbelttjek venligst og prøv igen."
         }
     }
 }
