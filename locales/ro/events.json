@@ -1,7 +1,14 @@
 {
     "interactionCreate": {
         "command": {
+            "failedToProcess": "Failed to process this command!",
             "cooldown": "Please wait, you are on a cooldown for `{{commandName}}`. You can use it again <t:{{expiredTimestamp}}:R>."
+        },
+        "button": {
+            "failedToProcess": "Failed to process this button!",
+            "missingPermissions": "Sorry, you don't have the required permissions to use this button.",
+            "interactionAuthorOnly": "You are not allowed to use this button.",
+            "cooldown": "Please wait, you are on a cooldown. You can use it again <t:{{expiredTimestamp}}:R>."
         }
     }
 }
