@@ -1,0 +1,53 @@
+{
+    "guildGate": {
+        "message": {
+            "embed": {
+                "author": "{{guild_name}} - Verifikation",
+                "description": {
+                    "value1": "Velkommen til verifikationsprocessen i **{{guild_name}}**!",
+                    "value2": "For at sikre en sikker og fornøjelig oplevelse har vi implementeret et kontrolsystem.",
+                    "value3": "Følg instruktionerne nedenfor for at komme i gang:",
+                    "value4": "\n1. Klik på knappen **\"Start verifikation\"** for at starte processen.",
+                    "value5": "2. Hvis du har brug for mere information, klik på **\"Information\"** knappen.",
+                    "value6": "\nDu er velkommen til at nå ud, hvis du støder på problemer eller har spørgsmål. Nyd din tid i **{{guild_name}}**!"
+                }
+            },
+            "buttons": {
+                "start": "Start Bekræftelse",
+                "info": "Information"
+            }
+        },
+        "information": {
+            "author": "{{guild_name}} - Verifikationsoplysninger",
+            "description1": "For at starte verifikationsprocessen, sørg venligst for at dine direkte beskeder er aktiveret for denne server.",
+            "description2": "Sådan aktiveres direkte beskeder for **{{guild_name}}**:",
+            "description3": "\n1. Klik på servernavnet i Discord appen.",
+            "description4": "2. Vælg **\"Privatlivsindstillinger\"** fra rullemenuen.",
+            "description5": "3. I **Privatlivsindstillinger**, sørg for, at **\"Direkte beskeder\"** er slået til.",
+            "description6": "\nNår du har aktiveret direkte beskeder, skal du klikke på knappen **\"Start verifikation\"** igen.",
+            "description7": "\nHvis du har spørgsmål eller støder på problemer, er du velkommen til at bede om hjælp."
+        },
+        "start": {
+            "sentDMToUser": "Jeg har sendt dig en privat besked. Fortsæt venligst for at tjekke den og fuldføre verifikationsprocessen.",
+            "failedToFetchUser": "Kunne ikke hente information til {{user_mention}}. Prøv igen senere eller kontakt en medarbejder, hvis problemet fortsætter.",
+            "failedToGetData": "Jeg mangler nogle nødvendige data for at fortsætte verifikationsprocessen. Gå venligst ud til en ansat for at få hjælp.",
+            "moduleIsTurnedOff": "Verifikationsmodulet er blevet deaktiveret, og jeg er ikke i stand til at fortsætte verifikationsprocessen. Kontakt venligst en medarbejder for hjælp.",
+            "captchaMessage": {
+                "description": "For at sikre et sikkert miljø i **{{guild_name}}**, skal du følge instruktionerne nedenfor for at fuldføre verifikationsprocessen:",
+                "fields": {
+                    "name": "Verifikation Instruktioner:",
+                    "value1": "1. Skriv de sporede farvede tegn fra venstre mod højre.",
+                    "value2": "2. Ignorer alle lokkekarakter.",
+                    "value3": "3. Karaktertilfælde (øverst/nederst) betyder ikke noget.",
+                    "value4": "4. Du har 2 minutter til at fuldføre verifikationen."
+                }
+            },
+            "disabledDirectMessages": "For at påbegynde verifikationsprocessen for **{{guild_name}}**, skal du aktivere dine direkte beskeder til denne server. Klik på **Information** knappen for en hurtig guide til, hvordan du aktiverer direkte beskeder.",
+            "verificationPassed": "Velkommen til **{{guild_name}}**! Du har nu adgang til serveren. Hvis du har spørgsmål, er du velkommen til at spørge.",
+            "failedToFindRole": "Åh nej! Jeg kunne ikke finde verifikationsrollen. Vær sød at komme i kontakt med en medarbejder for hjælp.",
+            "failedToPassVerification": "Åh nej! Det ser ud til, at du ikke passerer verifikationsfasen. Som følge heraf er du blevet smidt ud. Bare rolig, du kan slutte dig tilbage og give det et andet skud. Du er velkommen til at prøve igen!",
+            "kickReason": "{{user_global_name}} har ikke bestået verifikationsprocessen.",
+            "wrongCaptchaCode": "Åh nej! Det ser ud til, at captcha koden du har angivet, er forkert. Dobbelttjek venligst og prøv igen."
+        }
+    }
+}
