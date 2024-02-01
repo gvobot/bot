@@ -1,6 +1,6 @@
 import { DiscordClient } from '../../bot.js';
 import { EventInterface, CommandInterface } from '../../components/typings/index.js';
-import { logger, getGuildLanguage } from '../../components/handlers/exports.js';
+import { logger } from '../../components/handlers/exports.js';
 import { getGuildTheme, getFooter } from '../../components/helpers/exports.js';
 import { Events, ChatInputCommandInteraction, Collection, EmbedBuilder } from 'discord.js';
 import i18next from '../../components/handlers/i18n.js';
@@ -21,7 +21,10 @@ const event: EventInterface = {
         const command: CommandInterface | undefined = client.commands.get(interaction.commandName);
         if (!command) {
             logger.error('Failed to process this command', command);
-            return interaction.reply({ content: 'Failed to process this command!' });
+            return interaction.reply({
+                content: i18next.t('interactionCreate.command.failedToProcess', { ns: 'events' }),
+                ephemeral: true,
+            });
         }
 
         /**
@@ -72,7 +75,9 @@ const event: EventInterface = {
             }
         } catch (error) {
             logger.error('Failed to process this command', error);
-            return interaction.reply({ content: `Failed to process this command` });
+            return interaction.reply({
+                content: i18next.t('interactionCreate.command.failedToProcess', { ns: 'events' }),
+            });
         }
     },
 };

@@ -1,5 +1,5 @@
 // import { DiscordClient } from '../../bot.js';
-import { defaultLanguage } from "../../config.js";
+import { defaultLanguage } from '../../config.js';
 import { fileURLToPath } from 'node:url';
 import path, { dirname } from 'node:path';
 import { readdirSync } from 'node:fs';
@@ -13,6 +13,8 @@ import FsBackend from 'i18next-fs-backend';
 
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
+
+import { logger } from './exports.js';
 
 await i18next.use(FsBackend).init<FsBackendOptions>({
     fallbackLng: defaultLanguage,
@@ -45,9 +47,39 @@ export function slashCommandTranslate(key: string, ns: string) {
     return translation;
 }
 
-export async function getGuildLanguage(guild: Guild) {
-    const guildSettings = await prisma.guild.findUnique({ where: { guildId: guild.id } });
-    return guildSettings?.language ?? defaultLanguage;
+// export async function getGuildLanguage(guild: Guild) {
+//     try {
+//         const guildSettings = await prisma.guild.findUnique({ where: { guildId: guild.id } });
+//         return guildSettings?.language ?? defaultLanguage;
+//     } catch (error) {
+//         logger.error(`Failed to fetch guild settings for guild ${guild.name}: `, error);
+//         return defaultLanguage;
+//     }
+// }
+
+const guildSettingsCache: Map<string, string> = new Map();
+
+export async function getGuildLanguages(guilds: Guild[]) {
+    const guildIds = guilds.map((guild) => guild.id);
+    const languages: Record<string, string> = {};
+
+    for (const guildId of guildIds) {
+        if (guildSettingsCache.has(guildId)) {
+            languages[guildId] = guildSettingsCache.get(guildId) ?? defaultLanguage;
+        } else {
+            try {
+                const guildSettings = await prisma.guild.findUnique({ where: { guildId } });
+                const language = guildSettings?.language ?? defaultLanguage;
+                languages[guildId] = language;
+                guildSettingsCache.set(guildId, language);
+            } catch (error) {
+                logger.error(`Failed to fetch guild settings for guild ${guildId}: `, error);
+                languages[guildId] = defaultLanguage;
+            }
+        }
+    }
+
+    return languages;
 }
 
 export async function changeLanguage(lng: string) {
@@ -56,8 +88,12 @@ export async function changeLanguage(lng: string) {
     }
 }
 
-export async function loadLanguageForGuild(guild: Guild) {
-    const guildSettings = await prisma.guild.findUnique({ where: { guildId: guild.id } });
-    const lng = guildSettings?.language ?? defaultLanguage;
-    await changeLanguage(lng);
+export async function loadLanguageForGuilds(guilds: Guild[]) {
+    const guildIds = guilds.map((guild) => guild.id);
+    const guildSettings = await prisma.guild.findMany({ where: { guildId: { in: guildIds } } });
+
+    for (const setting of guildSettings) {
+        const lng = setting?.language || defaultLanguage;
+        await changeLanguage(lng);
+    }
 }

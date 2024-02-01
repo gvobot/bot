@@ -1,7 +1,7 @@
 import { DiscordClient } from '../../bot.js';
 import { EventInterface } from '../../components/typings/index.js';
 import { Events, ChatInputCommandInteraction } from 'discord.js';
-
+import { defaultLanguage } from '../../config.js';
 const event: EventInterface = {
     name: Events.InteractionCreate,
     options: { once: false, rest: false },
@@ -15,12 +15,12 @@ const event: EventInterface = {
                 where: { guildId: guildId },
                 create: {
                     guildId: guildId,
-                    language: 'en-US',
+                    language: defaultLanguage,
                     themeColor: client.config.colors.theme,
                     isMembership: false,
                 },
                 update: {
-                    language: 'en-US',
+                    language: defaultLanguage,
                     themeColor: client.config.colors.theme,
                     isMembership: false,
                 },

@@ -1,8 +1,8 @@
 import { Client, Collection, GatewayIntentBits, Partials } from 'discord.js';
 import { ClusterClient, getInfo } from 'discord-hybrid-sharding';
-import { ConfigInterface, EventInterface, CommandInterface } from './components/typings/index.js';
+import { ConfigInterface, EventInterface, ButtonInterface, CommandInterface } from './components/typings/index.js';
 
-import { loadCommands, loadEvents, logger } from './components/handlers/exports.js';
+import { loadCommands, loadEvents, loadButtons, logger } from './components/handlers/exports.js';
 
 import { config } from './config.js';
 
@@ -14,6 +14,7 @@ export class DiscordClient extends Client {
     public subcommands: Collection<string, CommandInterface>;
     public cooldowns: Collection<string, Collection<string, number>>;
     public events: Collection<string, EventInterface>;
+    public buttons: Collection<string, ButtonInterface>;
     public config: ConfigInterface;
     public cluster: ClusterClient<DiscordClient>;
     public db: typeof prisma;
@@ -56,6 +57,7 @@ export class DiscordClient extends Client {
         this.subcommands = new Collection();
         this.cooldowns = new Collection();
         this.events = new Collection();
+        this.buttons = new Collection();
         this.config = config;
         this.cluster = new ClusterClient(this);
         this.db = prisma;
@@ -65,9 +67,10 @@ export class DiscordClient extends Client {
             loadEvents(this)
                 .then(() => {
                     loadCommands(this);
+                    loadButtons(this);
                 })
                 .catch((error) => {
-                    console.error(error);
+                    logger.error(error);
                 });
         });
         await this.startClient();

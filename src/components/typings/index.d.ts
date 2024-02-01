@@ -1,4 +1,4 @@
-import { SlashCommandBuilder, ClientEvents, PermissionFlagsBits, ColorResolvable } from 'discord.js';
+import { SlashCommandBuilder, ClientEvents, PermissionFlagsBits, ColorResolvable, PermissionsString } from 'discord.js';
 
 export type ObjectNameIDArray = Array[{ name: string; id: string }];
 export type WebhookArray = Array[{ name: string; url: string }];
@@ -8,9 +8,9 @@ export interface ConfigInterface {
     bot: {
         token: string;
         dashboard?: {
-            url: string,
-            key: string
-        },
+            url: string;
+            key: string;
+        };
         client: {
             id: string;
             secret: string;
@@ -34,6 +34,14 @@ export interface ConfigInterface {
 export interface EventInterface {
     name: keyof ClientEvents;
     options: { rest: boolean; once: boolean };
+    execute: (...args: any[]) => any;
+}
+
+export interface ButtonInterface {
+    customId: string;
+    cooldown?: number;
+    permissions?: Array<PermissionsString> | PermissionsString;
+    interactionAuthorOnly: boolean;
     execute: (...args: any[]) => any;
 }
 

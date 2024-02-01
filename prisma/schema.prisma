@@ -14,17 +14,20 @@ model Client {
 }
 
 model Guild {
-  guildId      String     @id @map("_id")
-  language     String     @default("en-US")
-  themeColor   String     @default("#2b2d31")
-  isMembership Boolean    @default(false)
-  guildGate    GuildGate?
+  guildId      String  @id @map("_id")
+  language     String  @default("en-US")
+  themeColor   String  @default("#2b2d31")
+  isMembership Boolean @default(false)
+  guildGate    Gate?
 }
 
-model GuildGate {
-  guildId      String   @id @map("_id")
-  joinRoles    String[]
-  joinChannel  String?
-  leaveChannel String?
-  guild        Guild    @relation(fields: [guildId], references: [guildId])
+model Gate {
+  guildId                      String   @id @map("_id")
+  isEnabled                    Boolean  @default(false)
+  roleAddOnVerification        String[]
+  roleRemoveOnVerification     String[]
+  welcomeOnVerification        Boolean  @default(false)
+  welcomeOnVerificationChannel String?
+  welcomeMessage               String   @default("Welcome {{user}}!")
+  guild                        Guild    @relation(fields: [guildId], references: [guildId])
 }
