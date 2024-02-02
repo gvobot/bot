@@ -5,28 +5,28 @@
     },
     "serverinfo": {
         "name": "serverinfo",
-        "description": "Get information about this guild",
+        "description": "Få information om denne server",
         "embed": {
             "author": "{{guild_name}} - information",
             "serverinformation": {
                 "name": "Server Information:",
                 "value1": "**ID:** `{{guild_id}}`",
-                "value2": "**Owner:** ",
-                "value3": "**Created:** "
+                "value2": "**Ejer:** ",
+                "value3": "**Oprettet:** "
             },
             "members": {
-                "name": "Members:",
-                "value1": "**Members:** `{{guild_totalMembers}}`",
-                "value2": "**Humans:** `{{guild_totalHumanMembers}}`",
+                "name": "Medlemmer:",
+                "value1": "**Medlemmer:** `{{guild_totalMembers}}`",
+                "value2": "**Mennesker:** `{{guild_totalHumanMembers}}`",
                 "value3": "**Bots:** `{{guild_bots}}`"
             },
             "newMembers": {
-                "name": "**New Members:**",
-                "value1": "**Last 12 Months:** `{{guild_lastMembers12Months}}`",
-                "value2": "**Last 6 Months:** `{{guild_lastMembers6Months}}`",
-                "value3": "**Last 30 Days:** `{{guild_lastMembers30Days}}`",
-                "value4": "**Last 7 Days:** `{{guild_lastMembers7days}}`",
-                "value5": "**Last 24 Hours:** `{{guild_lastMembers24hrs}}`"
+                "name": "**Nye Medlemmer:**",
+                "value1": "**Seneste 12 Måneder:** `{{guild_lastMembers12Months}}`",
+                "value2": "**Seneste 6 Måneder:** `{{guild_lastMembers6Months}}`",
+                "value3": "**Seneste 30 Dage:** `{{guild_lastMembers30Days}}`",
+                "value4": "**Seneste 7 Dage:** `{{guild_lastMembers7days}}`",
+                "value5": "**Seneste 24 Timer:** `{{guild_lastMembers24hrs}}`"
             }
         }
     },
