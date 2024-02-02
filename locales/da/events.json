@@ -1,7 +1,14 @@
 {
     "interactionCreate": {
         "command": {
-            "cooldown": "Please wait, you are on a cooldown for `{{commandName}}`. You can use it again <t:{{expiredTimestamp}}:R>."
+            "failedToProcess": "Mislykkedes at behandle denne kommando!",
+            "cooldown": "Vent venligst, du er på en nedkøling for `{{commandName}}`. Du kan bruge det igen <t:{{expiredTimestamp}}:R>."
+        },
+        "button": {
+            "failedToProcess": "Mislykkedes at behandle denne kommando!",
+            "missingPermissions": "Beklager, du har ikke de nødvendige tilladelser til at bruge denne knap.",
+            "interactionAuthorOnly": "Du har ikke tilladelse til at bruge denne knap.",
+            "cooldown": "Vent venligst, du er på en nedkøling. Du kan bruge det igen <t:{{expiredTimestamp}}:R>."
         }
     }
 }
