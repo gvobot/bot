@@ -10,5 +10,29 @@
             "interactionAuthorOnly": "Du har ikke tilladelse til at bruge denne knap.",
             "cooldown": "Vent venligst, du er på en nedkøling. Du kan bruge det igen <t:{{expiredTimestamp}}:R>."
         }
+    },
+    "messageCreate": {
+        "help_mention": {
+            "author": "{{client_user_name}} - Links",
+            "legal": {
+                "name": "Legal",
+                "value1": "Terms of Service",
+                "value2": "Privacy Policy"
+            },
+            "help_support": {
+                "name": "Help & Support",
+                "value1": "Donate Though PayPal",
+                "value2": "Donate Though Ko-Fi",
+                "value3": "Support Server",
+                "value4": "Web Dashboard",
+                "value5": "Commands"
+            },
+            "development_contribute": {
+                "name": "Development & Contributing",
+                "value1": "Project Overview",
+                "value2": "Translate",
+                "value3": "GitHub"
+            }
+        }
     }
 }
