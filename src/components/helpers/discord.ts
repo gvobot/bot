@@ -1,5 +1,5 @@
 import { DiscordClient } from '../../bot.js';
-import { TextChannel, WebhookClient, Guild, EmbedBuilder, ColorResolvable } from 'discord.js';
+import { TextChannel, WebhookClient, Guild, EmbedBuilder, ColorResolvable, GuildMember } from 'discord.js';
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
@@ -81,6 +81,7 @@ export async function getFooter(
     }
 }
 
+// Function to get all the users across all guilds the bot is in
 /**
  *
  * @param client
@@ -96,6 +97,7 @@ export async function getUsersCount(client: DiscordClient): Promise<number> {
     }
 }
 
+// Function to get all the channels across all guilds the bot is in
 /**
  *
  * @param client
@@ -111,6 +113,7 @@ export async function getChannelsCount(client: DiscordClient): Promise<number> {
     }
 }
 
+// Function to get total amount of guilds the bot is in
 /**
  *
  * @param client
@@ -124,4 +127,117 @@ export async function getGuildsCount(client: DiscordClient): Promise<number> {
         console.error(err);
         return 0;
     }
+}
+
+// Function to get total members in a guild
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getTotalMembers(guild: Guild): number {
+    return guild.memberCount;
+}
+
+// Function to get bot members in a guild
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getBotMembers(guild: Guild): number {
+    return guild.members.cache.filter((member: GuildMember) => member.user.bot).size;
+}
+
+// Function to get human members in a guild
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getHumanMembers(guild: Guild): number {
+    const totalMembers = getTotalMembers(guild);
+    const botMembers = getBotMembers(guild);
+    return totalMembers - botMembers;
+}
+
+// Function to get members who joined in the last 24 hours
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getMembersJoinedLast24Hours(guild: Guild): number {
+    const currentTime = Date.now();
+    return guild.members.cache.filter(
+        (member: GuildMember) =>
+            member.joinedTimestamp !== null && currentTime - member.joinedTimestamp < 24 * 60 * 60 * 1000,
+    ).size;
+}
+
+// Function to get members who joined in the last 7 days
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getMembersJoinedLast7Days(guild: Guild): number {
+    const currentTime = Date.now();
+    return guild.members.cache.filter(
+        (member: GuildMember) =>
+            member.joinedTimestamp !== null && currentTime - member.joinedTimestamp < 7 * 24 * 60 * 60 * 1000,
+    ).size;
+}
+
+// Function to get members who joined in the last 30 days
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getMembersJoinedLast30Days(guild: Guild): number {
+    const currentTime = Date.now();
+    return guild.members.cache.filter(
+        (member: GuildMember) =>
+            member.joinedTimestamp !== null && currentTime - member.joinedTimestamp < 30 * 24 * 60 * 60 * 1000,
+    ).size;
+}
+
+// Function to get members who joined in the last 6 months
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getMembersJoinedLast6Months(guild: Guild): number {
+    const currentTime = Date.now();
+    return guild.members.cache.filter(
+        (member: GuildMember) =>
+            member.joinedTimestamp !== null && currentTime - member.joinedTimestamp < 6 * 30 * 24 * 60 * 60 * 1000,
+    ).size;
+}
+
+// Function to get members who joined in the last 12 months
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export function getMembersJoinedLast12Months(guild: Guild): number {
+    const currentTime = Date.now();
+    return guild.members.cache.filter(
+        (member: GuildMember) =>
+            member.joinedTimestamp !== null && currentTime - member.joinedTimestamp < 12 * 30 * 24 * 60 * 60 * 1000,
+    ).size;
+}
+
+// Function to get total amount of bans
+/**
+ *
+ * @param guild
+ * @returns {number}
+ */
+export async function getBanCount(guild: Guild): Promise<number> {
+    const bans = await guild.bans.fetch();
+    return bans.size;
 }
