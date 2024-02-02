@@ -15,22 +15,22 @@
         "help_mention": {
             "author": "{{client_user_name}} - Links",
             "legal": {
-                "name": "Legal",
-                "value1": "Terms of Service",
-                "value2": "Privacy Policy"
+                "name": "Juridisk",
+                "value1": "Servicevilkår",
+                "value2": "Privatlivspolitik"
             },
             "help_support": {
-                "name": "Help & Support",
-                "value1": "Donate Though PayPal",
-                "value2": "Donate Though Ko-Fi",
+                "name": "Hjælp Og Support",
+                "value1": "Doner Igennem PayPal",
+                "value2": "Doner Igennem Ko-Fi",
                 "value3": "Support Server",
-                "value4": "Web Dashboard",
-                "value5": "Commands"
+                "value4": "Web Kontrolpanel",
+                "value5": "Kommandoer"
             },
             "development_contribute": {
-                "name": "Development & Contributing",
-                "value1": "Project Overview",
-                "value2": "Translate",
+                "name": "Udvikling Og Bidrag",
+                "value1": "Projekt Oversigt",
+                "value2": "Oversæt",
                 "value3": "GitHub"
             }
         }
