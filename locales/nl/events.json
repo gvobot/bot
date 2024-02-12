@@ -25,12 +25,12 @@
                 "value2": "Doneer via Ko-Fi",
                 "value3": "Ondersteunings Server",
                 "value4": "Web Dashboard",
-                "value5": "Commands"
+                "value5": "Opdrachten"
             },
             "development_contribute": {
-                "name": "Development & Contributing",
-                "value1": "Project Overview",
-                "value2": "Translate",
+                "name": "Ontwikkeling & bijdragen",
+                "value1": "Projectoverzicht",
+                "value2": "Vertalen",
                 "value3": "GitHub"
             }
         }
