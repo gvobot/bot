@@ -1,36 +1,36 @@
 {
     "interactionCreate": {
         "command": {
-            "failedToProcess": "Failed to process this command!",
-            "cooldown": "Please wait, you are on a cooldown for `{{commandName}}`. You can use it again <t:{{expiredTimestamp}}:R>."
+            "failedToProcess": "Не удалось обработать эту команду!",
+            "cooldown": "Пожалуйста, подождите, перезарядка `{{commandName}}`. Вы сможете использовать ее снова через <t:{{expiredTimestamp}}:R>."
         },
         "button": {
-            "failedToProcess": "Failed to process this button!",
-            "missingPermissions": "Sorry, you don't have the required permissions to use this button.",
-            "interactionAuthorOnly": "You are not allowed to use this button.",
-            "cooldown": "Please wait, you are on a cooldown. You can use it again <t:{{expiredTimestamp}}:R>."
+            "failedToProcess": "Не удалось обработать эту кнопку!",
+            "missingPermissions": "Извините, у вас нет необходимых прав для использования этой кнопки.",
+            "interactionAuthorOnly": "Вам не разрешается использовать эту кнопку.",
+            "cooldown": "Пожалуйста, подождите, идет перезарядка. Вы сможете использовать снова через <t:{{expiredTimestamp}}:R>."
         }
     },
     "messageCreate": {
         "help_mention": {
-            "author": "{{client_user_name}} - Links",
+            "author": "{{client_user_name}} — Ссылки",
             "legal": {
-                "name": "Legal",
-                "value1": "Terms of Service",
-                "value2": "Privacy Policy"
+                "name": "Юридическая",
+                "value1": "Условия Использования",
+                "value2": "Политика Конфиденциальности"
             },
             "help_support": {
-                "name": "Help & Support",
-                "value1": "Donate Though PayPal",
-                "value2": "Donate Though Ko-Fi",
-                "value3": "Support Server",
-                "value4": "Web Dashboard",
-                "value5": "Commands"
+                "name": "Помощь и Поддержка",
+                "value1": "Пожертвование через PayPal",
+                "value2": "Пожертвование через Ko-Fi",
+                "value3": "Сервер поддержки",
+                "value4": "Веб табло",
+                "value5": "Команды"
             },
             "development_contribute": {
-                "name": "Development & Contributing",
-                "value1": "Project Overview",
-                "value2": "Translate",
+                "name": "Разработка и Вклад",
+                "value1": "Обзор проекта",
+                "value2": "Перевести",
                 "value3": "GitHub"
             }
         }

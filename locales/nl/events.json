@@ -1,36 +1,36 @@
 {
     "interactionCreate": {
         "command": {
-            "failedToProcess": "Failed to process this command!",
-            "cooldown": "Please wait, you are on a cooldown for `{{commandName}}`. You can use it again <t:{{expiredTimestamp}}:R>."
+            "failedToProcess": "Kan deze opdracht niet verwerken!",
+            "cooldown": "Een ogenblik geduld, je bent in een cooldown voor `{{commandName}}`. Je kan het weer gebruiken <t:{{expiredTimestamp}}:R>."
         },
         "button": {
-            "failedToProcess": "Failed to process this button!",
-            "missingPermissions": "Sorry, you don't have the required permissions to use this button.",
-            "interactionAuthorOnly": "You are not allowed to use this button.",
-            "cooldown": "Please wait, you are on a cooldown. You can use it again <t:{{expiredTimestamp}}:R>."
+            "failedToProcess": "Kan deze Button niet verwerken!",
+            "missingPermissions": "Sorry, je hebt niet de vereiste rechten om deze Button te gebruiken.",
+            "interactionAuthorOnly": "Je hebt geen toestemming om deze Button te gebruiken.",
+            "cooldown": "Even geduld, je zit op een cooldown. Je kan het opnieuw gebruiken <t:{{expiredTimestamp}}:R>."
         }
     },
     "messageCreate": {
         "help_mention": {
             "author": "{{client_user_name}} - Links",
             "legal": {
-                "name": "Legal",
-                "value1": "Terms of Service",
-                "value2": "Privacy Policy"
+                "name": "Legaal",
+                "value1": "Servicevoorwaarden",
+                "value2": "Privacybeleid"
             },
             "help_support": {
-                "name": "Help & Support",
-                "value1": "Donate Though PayPal",
-                "value2": "Donate Though Ko-Fi",
-                "value3": "Support Server",
+                "name": "Hulp en Support",
+                "value1": "Doneer via PayPal",
+                "value2": "Doneer via Ko-Fi",
+                "value3": "Ondersteunings Server",
                 "value4": "Web Dashboard",
-                "value5": "Commands"
+                "value5": "Opdrachten"
             },
             "development_contribute": {
-                "name": "Development & Contributing",
-                "value1": "Project Overview",
-                "value2": "Translate",
+                "name": "Ontwikkeling & bijdragen",
+                "value1": "Projectoverzicht",
+                "value2": "Vertalen",
                 "value3": "GitHub"
             }
         }

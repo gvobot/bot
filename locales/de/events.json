@@ -1,14 +1,14 @@
 {
     "interactionCreate": {
         "command": {
-            "failedToProcess": "Failed to process this command!",
-            "cooldown": "Please wait, you are on a cooldown for `{{commandName}}`. You can use it again <t:{{expiredTimestamp}}:R>."
+            "failedToProcess": "Dieser Befehl konnte nicht verarbeitet werden!",
+            "cooldown": "Bitte warte, du bist auf einer Abklingzeit für \\`{{commandName}}\\`. du kannst sie erneut <t:{{expiredTimestamp}}:R> benutzen."
         },
         "button": {
-            "failedToProcess": "Failed to process this button!",
-            "missingPermissions": "Sorry, you don't have the required permissions to use this button.",
-            "interactionAuthorOnly": "You are not allowed to use this button.",
-            "cooldown": "Please wait, you are on a cooldown. You can use it again <t:{{expiredTimestamp}}:R>."
+            "failedToProcess": "Konnte diesen Button nicht verarbeiten!",
+            "missingPermissions": "Entschuldigung, Sie haben nicht die erforderlichen Berechtigungen, um diesen Button zu verwenden.",
+            "interactionAuthorOnly": "Sie sind nicht berechtigt, diesen Button zu verwenden.",
+            "cooldown": "Bitte warte, du bist auf einer Abklingzeit. Du kannst sie wieder <t:{{expiredTimestamp}}:R> verwenden."
         }
     },
     "messageCreate": {
@@ -16,21 +16,21 @@
             "author": "{{client_user_name}} - Links",
             "legal": {
                 "name": "Legal",
-                "value1": "Terms of Service",
-                "value2": "Privacy Policy"
+                "value1": "Nutzungsbedingungen",
+                "value2": "Datenschutz"
             },
             "help_support": {
-                "name": "Help & Support",
-                "value1": "Donate Though PayPal",
-                "value2": "Donate Though Ko-Fi",
-                "value3": "Support Server",
-                "value4": "Web Dashboard",
-                "value5": "Commands"
+                "name": "Hilfe und Support",
+                "value1": "Spenden Sie über PayPal",
+                "value2": "Spenden Sie über Ko-Fi",
+                "value3": "Unterstützungs-Server",
+                "value4": "Web-Dashboard",
+                "value5": "Befehle"
             },
             "development_contribute": {
-                "name": "Development & Contributing",
-                "value1": "Project Overview",
-                "value2": "Translate",
+                "name": "Entwicklung & Beitrag",
+                "value1": "Projektübersicht",
+                "value2": "Übersetzen",
                 "value3": "GitHub"
             }
         }
