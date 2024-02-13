@@ -39,7 +39,7 @@
                     "value1": "1. Typ de gekleurde tekens van links naar rechts.",
                     "value2": "2. Negeer elke decoy karakters.",
                     "value3": "3. Karakter (hoofd/lager) maakt niet uit.",
-                    "value4": "4. je hebt 2 minuten om de verificatie af te ronden."
+                    "value4": "4. U heeft 2 minuten om de verificatie af te ronden."
                 }
             },
             "disabledDirectMessages": "Om het verificatieproces voor **{{guild_name}}** te starten, schakel je privéberichten in voor deze server. Klik op de **Informatie** knop voor een snelle gids over het inschakelen van privéberichten.",
