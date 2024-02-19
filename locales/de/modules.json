@@ -1,53 +1,67 @@
 {
-    "guildGate": {
+    "moderation": {
+        "messages": {
+            "missingPermissions": "You do not have the required role to do this."
+        },
+        "ban": {
+            "": ""
+        },
+        "kick": {
+            "": ""
+        },
+        "mute": {
+            "": ""
+        }
+    },
+    "verification": {
         "message": {
             "embed": {
-                "author": "{{guild_name}} - Verifizierung",
+                "author": "{{guild_name}} - Verification",
                 "description": {
-                    "value1": "Willkommen beim Verifizierungsprozess in **{{guild_name}}**!",
-                    "value2": "Um ein sicheres und angenehmes Erlebnis zu gewährleisten, haben wir ein Verifizierungssystem implementiert.",
-                    "value3": "Folgen Sie den folgenden Anweisungen, um loszulegen:",
-                    "value4": "\n1. Klicke auf **\"Überprüfung starten\"** um den Prozess zu starten.",
-                    "value5": "2. Wenn Sie weitere Informationen benötigen, klicken Sie auf den **\"Informationen\"** Button.",
-                    "value6": "\nFühlen Sie sich frei, wenn Sie auf Probleme stoßen oder Fragen haben. Genießen Sie Ihre Zeit in **{{guild_name}}**!"
+                    "value1": "Welcome to the verification process in **{{guild_name}}**!",
+                    "value2": "To ensure a secure and enjoyable experience, we have implemented a verification system.",
+                    "value3": "Follow the instructions below to get started:",
+                    "value4": "\n1. Click the **\"Start Verification\"** button to begin the process.",
+                    "value5": "2. If you need more information, click the **\"Information\"** button.",
+                    "value6": "\nFeel free to reach out if you encounter any issues or have questions. Enjoy your time in **{{guild_name}}**!"
                 }
             },
             "buttons": {
-                "start": "Überprüfung starten",
-                "info": "Informationen"
+                "start": "Start Verification",
+                "info": "Information"
             }
         },
         "information": {
-            "author": "{{guild_name}} - Überprüfungsinformationen",
-            "description1": "Um den Verifizierungsprozess zu starten, stellen Sie sicher, dass Ihre Direktnachrichten für diesen Server aktiviert sind.",
-            "description2": "Hier ist, wie man Direktnachrichten für **{{guild_name}} ** aktiviert:",
-            "description3": "\n1. Klicke auf den Servernamen in der Discord App.",
-            "description4": "2. Wählen Sie **\"Privatsphäreeinstellungen\"** aus dem Dropdown Menü.",
-            "description5": "3. In den **Privatsphäreeinstellungen**, stelle sicher, dass **\"Direktnachrichten\"** eingeschaltet ist.",
-            "description6": "\nSobald Sie Direktnachrichten aktiviert haben, klicken Sie erneut auf den **\"Überprüfung starten\"**.",
-            "description7": "\nWenn du Fragen hast oder auf Probleme triffst, kannst du gerne um Hilfe bitten."
+            "author": "{{guild_name}} - Verification Information",
+            "description1": "To start the verification process, please make sure your direct messages are enabled for this server.",
+            "description2": "Here's how to enable direct messages for **{{guild_name}}**:",
+            "description3": "\n1. Click on the server name in the Discord app.",
+            "description4": "2. Select **\"Privacy Settings\"** from the dropdown menu.",
+            "description5": "3. In the **Privacy Settings**, ensure that **\"Direct-messages\"** is turned on.",
+            "description6": "\nOnce you've enabled direct messages, click the **\"Start Verification\"** button again.",
+            "description7": "\nIf you have any questions or encounter issues, feel free to ask for assistance."
         },
         "start": {
-            "sentDMToUser": "Ich habe dir eine private Nachricht geschickt. Bitte überprüfe sie und vervollständige den Verifizierungsprozess.",
-            "failedToFetchUser": "Fehler beim Abrufen der Informationen für {{user_mention}}. Bitte versuchen Sie es später noch einmal oder kontaktieren Sie ein Teammitglied, wenn das Problem weiterhin besteht.",
-            "failedToGetData": "Mir fehlen einige notwendige Daten, um den Verifizierungsprozess fortzusetzen. Bitte wenden Sie sich an einen Mitarbeiter um Hilfe zu erhalten.",
-            "moduleIsTurnedOff": "Das Verifizierungsmodul wurde deaktiviert, und ich kann den Verifizierungsprozess nicht fortsetzen. Bitte kontaktieren Sie einen Mitarbeiter für Unterstützung.",
+            "sentDMToUser": "I've sent you a private message. Please proceed to check it and complete the verification process.",
+            "failedToFetchUser": "Failed to retrieve information for {{user_mention}}. Please try again later or contact a staff member if the issue persists.",
+            "failedToGetData": "I'm missing some necessary data to continue the verification process. Please reach out to a staff member for assistance.",
+            "moduleIsTurnedOff": "The verification module has been disabled, and I'm unable to continue the verification process. Please contact a staff member for assistance.",
             "captchaMessage": {
-                "description": "Um eine sichere Umgebung in **{{guild_name}}** zu gewährleisten, folgen Sie bitte den Anweisungen unten, um den Verifizierungsprozess abzuschließen:",
+                "description": "To ensure a secure environment in **{{guild_name}}**, please follow the instructions below to complete the verification process:",
                 "fields": {
-                    "name": "Verifizierungsanweisungen:",
-                    "value1": "1. Geben Sie die nachverfolgten farbigen Zeichen von links nach rechts ein.",
-                    "value2": "2. Ignorieren Sie alle Lockfiguren.",
-                    "value3": "3. Zeichenfälle (oben/niedriger) sind unerheblich.",
-                    "value4": "4. Sie haben 2 Minuten, um die Überprüfung durchzuführen."
+                    "name": "Verification Instructions:",
+                    "value1": "1. Type the traced colored characters from left to right.",
+                    "value2": "2. Ignore any decoy characters.",
+                    "value3": "3. Character cases (upper/lower) do not matter.",
+                    "value4": "4. You have 2 minutes to complete the verification."
                 }
             },
-            "disabledDirectMessages": "Um den Verifizierungsprozess für **{{guild_name}}** zu starten, aktivieren Sie bitte Ihre Direktnachrichten für diesen Server. Klicken Sie auf die **Informationen** Schaltfläche um eine kurze Anleitung zur Aktivierung von Direktnachrichten zu erhalten.",
-            "verificationPassed": "Willkommen bei **{{guild_name}}**! Sie haben nun Zugriff auf den Server. Wenn Sie Fragen haben, zögern Sie nicht, Fragen zu stellen.",
-            "failedToFindRole": "Oh nein! Ich konnte die Verifizierungsrolle nicht finden. Bitte kontaktieren Sie ein Mitarbeiter für Hilfe.",
-            "failedToPassVerification": "Oh nein! Es scheint, dass du die Verifikationsstufe nicht bestanden hast. Als Ergebnis wurdest du gekickt. Keine Sorge, du kannst dich wieder anmelden und ihm einen weiteren Schuss geben. Du kannst es noch einmal versuchen!",
-            "kickReason": "{{user_global_name}} hat den Verifizierungsprozess nicht erfolgreich bestanden.",
-            "wrongCaptchaCode": "Oh nein! Es scheint, als ob der Captcha-Code, den du angegeben hast, nicht korrekt ist. Bitte überprüfen Sie ihn und versuchen Sie es erneut."
+            "disabledDirectMessages": "To initiate the verification process for **{{guild_name}}**, please enable your direct messages for this server. Click on the **Information** button for a quick guide on how to enable direct messages.",
+            "verificationPassed": "Welcome to **{{guild_name}}**! You now have access to the server. If you have any questions, feel free to ask.",
+            "failedToFindRole": "Oh no! I couldn't locate the verification role. Kindly get in touch with a staff member for assistance.",
+            "failedToPassVerification": "Oh no! It seems you didn't pass the verification stage. As a result, you've been kicked. Don't worry, you can join back and give it another shot. Feel free to try again!",
+            "kickReason": "{{user_global_name}} did not successfully pass the verification process.",
+            "wrongCaptchaCode": "Oh no! It seems the captcha code you provided is incorrect. Please double-check and try again."
         }
     }
 }

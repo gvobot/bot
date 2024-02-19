@@ -1,5 +1,19 @@
 {
-    "guildGate": {
+    "moderation": {
+        "messages": {
+            "missingPermissions": "You do not have the required role to do this."
+        },
+        "ban": {
+            "": ""
+        },
+        "kick": {
+            "": ""
+        },
+        "mute": {
+            "": ""
+        }
+    },
+    "verification": {
         "message": {
             "embed": {
                 "author": "{{guild_name}} - Verification",

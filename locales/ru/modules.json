@@ -1,53 +1,67 @@
 {
-    "guildGate": {
+    "moderation": {
+        "messages": {
+            "missingPermissions": "You do not have the required role to do this."
+        },
+        "ban": {
+            "": ""
+        },
+        "kick": {
+            "": ""
+        },
+        "mute": {
+            "": ""
+        }
+    },
+    "verification": {
         "message": {
             "embed": {
-                "author": "{{guild_name}} — Верификация",
+                "author": "{{guild_name}} - Verification",
                 "description": {
-                    "value1": "Добро пожаловать в процесс верификации в **{{guild_name}}**!",
-                    "value2": "Чтобы обеспечить безопасность и приятный опыт, мы внедрили систему верификации.",
-                    "value3": "Следуйте приведенным ниже инструкциям, чтобы начать работу:",
-                    "value4": "\n1. Нажмите кнопку **«Начать верификацию»**, чтобы начать процесс.",
-                    "value5": "2. Если нуждаетесь в большей информации, нажмите на кнопку **«Информация»**.",
-                    "value6": "\nНе стесняйтесь обращаться к нам, если у вас возникнут какие-либо проблемы или вопросы. Приятного времяпровождения в **{{guild_name}}**!"
+                    "value1": "Welcome to the verification process in **{{guild_name}}**!",
+                    "value2": "To ensure a secure and enjoyable experience, we have implemented a verification system.",
+                    "value3": "Follow the instructions below to get started:",
+                    "value4": "\n1. Click the **\"Start Verification\"** button to begin the process.",
+                    "value5": "2. If you need more information, click the **\"Information\"** button.",
+                    "value6": "\nFeel free to reach out if you encounter any issues or have questions. Enjoy your time in **{{guild_name}}**!"
                 }
             },
             "buttons": {
-                "start": "Начать верификацию",
-                "info": "Информация"
+                "start": "Start Verification",
+                "info": "Information"
             }
         },
         "information": {
-            "author": "{{guild_name}} — Информация о верификации",
-            "description1": "Чтобы начать процесс верификации, убедитесь, что ваши личные сообщения включены для этого сервера.",
-            "description2": "Вот как включить личные сообщения для **{{guild_name}}**:",
-            "description3": "\n1. Нажмите на название сервера в приложении Discord.",
-            "description4": "2. Выберите **«Настройки конфиденциальности»** из выпадающего меню.",
-            "description5": "3. В **Настройках конфиденциальности** убедитесь, что **«Личные сообщения»** включены.",
-            "description6": "\nВключив личные сообщения, нажмите на кнопку *«Начать верификацию»** снова.",
-            "description7": "\nЕсли у вас возникнут вопросы или проблемы, не стесняйтесь обращаться за помощью."
+            "author": "{{guild_name}} - Verification Information",
+            "description1": "To start the verification process, please make sure your direct messages are enabled for this server.",
+            "description2": "Here's how to enable direct messages for **{{guild_name}}**:",
+            "description3": "\n1. Click on the server name in the Discord app.",
+            "description4": "2. Select **\"Privacy Settings\"** from the dropdown menu.",
+            "description5": "3. In the **Privacy Settings**, ensure that **\"Direct-messages\"** is turned on.",
+            "description6": "\nOnce you've enabled direct messages, click the **\"Start Verification\"** button again.",
+            "description7": "\nIf you have any questions or encounter issues, feel free to ask for assistance."
         },
         "start": {
-            "sentDMToUser": "Я отправил вам личное сообщение. Пожалуйста, посмотрите и пройдите процесс верификации.",
-            "failedToFetchUser": "Не удалось получить информацию о {{user_mention}}. Пожалуйста, повторите попытку позже или свяжитесь с сотрудником, если проблема сохраняется.",
-            "failedToGetData": "Мне не хватает некоторых данных, необходимых для продолжения процесса верификации. Пожалуйста, обратитесь за помощью к одному из сотрудников.",
-            "moduleIsTurnedOff": "Модуль верификации был отключен, и я не могу продолжить процесс верификации. Пожалуйста, обратитесь к сотруднику за помощью.",
+            "sentDMToUser": "I've sent you a private message. Please proceed to check it and complete the verification process.",
+            "failedToFetchUser": "Failed to retrieve information for {{user_mention}}. Please try again later or contact a staff member if the issue persists.",
+            "failedToGetData": "I'm missing some necessary data to continue the verification process. Please reach out to a staff member for assistance.",
+            "moduleIsTurnedOff": "The verification module has been disabled, and I'm unable to continue the verification process. Please contact a staff member for assistance.",
             "captchaMessage": {
-                "description": "Чтобы обеспечить безопасную среду в **{{guild_name}}**, следуйте приведенным ниже инструкциям для завершения процесса верификации:",
+                "description": "To ensure a secure environment in **{{guild_name}}**, please follow the instructions below to complete the verification process:",
                 "fields": {
-                    "name": "Инструкция по верификации:",
-                    "value1": "1. Введите прорисованные цветные символы слева направо.",
-                    "value2": "2. Игнорируйте любые символы-приманки.",
-                    "value3": "3. Регистры символов (верхний/нижний) не имеют значения.",
-                    "value4": "4. У вас есть 2 минуты, чтобы завершить верификацию."
+                    "name": "Verification Instructions:",
+                    "value1": "1. Type the traced colored characters from left to right.",
+                    "value2": "2. Ignore any decoy characters.",
+                    "value3": "3. Character cases (upper/lower) do not matter.",
+                    "value4": "4. You have 2 minutes to complete the verification."
                 }
             },
-            "disabledDirectMessages": "Чтобы начать процесс верификации для **{{guild_name}}**, включите личные сообщения для этого сервера. Нажмите на кнопку **Информация**, чтобы получить краткое руководство по включению личных сообщений.",
-            "verificationPassed": "Добро пожаловать в **{{guild_name}}**! Теперь у вас есть доступ к серверу. Если у вас есть вопросы, не стесняйтесь их задавать.",
-            "failedToFindRole": "О нет! Я не смог найти роль верификации. Пожалуйста, обратитесь к сотруднику за помощью.",
-            "failedToPassVerification": "О нет! Похоже, вы не прошли этап верификации. В результате вы были выгнаны. Не волнуйтесь, вы можете вернуться и попробовать еще раз. Не стесняйтесь, попробуйте еще раз!",
-            "kickReason": "{{user_global_name}} не удалось пройти верификацию.",
-            "wrongCaptchaCode": "О нет! Похоже, что введенный код капчи неверен. Пожалуйста, перепроверьте и попробуйте еще раз."
+            "disabledDirectMessages": "To initiate the verification process for **{{guild_name}}**, please enable your direct messages for this server. Click on the **Information** button for a quick guide on how to enable direct messages.",
+            "verificationPassed": "Welcome to **{{guild_name}}**! You now have access to the server. If you have any questions, feel free to ask.",
+            "failedToFindRole": "Oh no! I couldn't locate the verification role. Kindly get in touch with a staff member for assistance.",
+            "failedToPassVerification": "Oh no! It seems you didn't pass the verification stage. As a result, you've been kicked. Don't worry, you can join back and give it another shot. Feel free to try again!",
+            "kickReason": "{{user_global_name}} did not successfully pass the verification process.",
+            "wrongCaptchaCode": "Oh no! It seems the captcha code you provided is incorrect. Please double-check and try again."
         }
     }
 }
