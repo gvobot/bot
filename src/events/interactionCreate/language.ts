@@ -9,20 +9,33 @@ const event: EventInterface = {
         const { guildId } = interaction;
         if (!guildId) return;
 
-        const guildSettings = await client.db.guild.findUnique({ where: { guildId: guildId } });
+        const guildSettings = await client.db.guild.findUnique({
+            where: { guildId: guildId },
+            select: { miscellaneous: true },
+        });
         if (!guildSettings) {
             await client.db.guild.upsert({
                 where: { guildId: guildId },
                 create: {
                     guildId: guildId,
-                    language: defaultLanguage,
-                    themeColor: client.config.colors.theme,
-                    isMembership: false,
+                    isPremium: false,
+                    miscellaneous: {
+                        create: {
+                            language: defaultLanguage,
+                            themeColor: client.config.colors.theme,
+                            managerRoles: [],
+                            administratorRoles: [],
+                            moderatorRoles: [],
+                            helperRoles: [],
+                        },
+                    },
                 },
                 update: {
-                    language: defaultLanguage,
-                    themeColor: client.config.colors.theme,
-                    isMembership: false,
+                    miscellaneous: {
+                        update: {
+                            language: defaultLanguage,
+                        },
+                    },
                 },
             });
         }

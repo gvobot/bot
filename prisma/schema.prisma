@@ -14,20 +14,57 @@ model Client {
 }
 
 model Guild {
-  guildId      String  @id @map("_id")
-  language     String  @default("en-US")
-  themeColor   String  @default("#2b2d31")
-  isMembership Boolean @default(false)
-  guildGate    Gate?
+  guildId       String         @id @map("_id")
+  isPremium     Boolean        @default(false)
+  miscellaneous Miscellaneous?
+  moderation    Moderation?
+  verification  Verification?
+  joinGate      JoinGate?
 }
 
-model Gate {
+model Miscellaneous {
+  guildId            String   @id @map("_id")
+  language           String   @default("en-US")
+  themeColor         String   @default("#2b2d31")
+  managerRoles       String[]
+  administratorRoles String[]
+  moderatorRoles     String[]
+  helperRoles        String[]
+  guild              Guild    @relation(fields: [guildId], references: [guildId])
+}
+
+model Moderation {
+  guildId   String  @id @map("_id")
+  isEnabled Boolean @default(false)
+  guild     Guild   @relation(fields: [guildId], references: [guildId])
+}
+
+model Verification {
   guildId                      String   @id @map("_id")
   isEnabled                    Boolean  @default(false)
-  roleAddOnVerification        String[]
-  roleRemoveOnVerification     String[]
+  rolesToAddOnVerification     String[]
+  rolesToRemoveOnVerification  String[]
   welcomeOnVerification        Boolean  @default(false)
   welcomeOnVerificationChannel String?
-  welcomeMessage               String   @default("Welcome {{user}}!")
+  welcomeOnVerificationMessage String   @default("Welcome {{user}}")
   guild                        Guild    @relation(fields: [guildId], references: [guildId])
+}
+
+model JoinGate {
+  guildId                      String        @id @map("_id")
+  isEnabled                    Boolean       @default(false)
+  dmMembersWhenPunished        Boolean       @default(false)
+  targetUnverifiedBots         Boolean       @default(false)
+  triggerActionUnverifiedBots  TriggerAction @default(Log)
+  targetNoAvatarUsers          Boolean       @default(false)
+  triggerActionNoAvatarUsers   TriggerAction @default(Log)
+  targetAdvertisingName        Boolean       @default(false)
+  triggerActionAdvertisingName TriggerAction @default(Kick)
+  guild                        Guild         @relation(fields: [guildId], references: [guildId])
+}
+
+enum TriggerAction {
+  Log
+  Kick
+  Ban
 }

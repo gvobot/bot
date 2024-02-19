@@ -3,6 +3,71 @@ import { TextChannel, WebhookClient, Guild, EmbedBuilder, ColorResolvable, Guild
 import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
+import { logger } from '../handlers/exports.js';
+
+// Function to check for permission
+export enum RoleType {
+    Manager = 'manager',
+    Administrator = 'administrator',
+    Moderator = 'moderator',
+    Helper = 'helper',
+}
+
+/**
+ *
+ * @param member
+ * @param roleType
+ * @returns
+ */
+export async function checkForPermission(member: GuildMember, requiredRole: RoleType): Promise<boolean> {
+    try {
+        const miscellaneousSettings = await prisma.miscellaneous.findUnique({
+            where: { guildId: member.guild.id },
+        });
+
+        if (!miscellaneousSettings) {
+            logger.error('Moderation settings not found for guild:', member.guild.id);
+            return false;
+        }
+
+        let roleArray: string[] = [];
+        switch (requiredRole) {
+            case RoleType.Manager:
+                roleArray = [...miscellaneousSettings.managerRoles];
+                break;
+            case RoleType.Administrator:
+                roleArray = [...miscellaneousSettings.managerRoles, ...miscellaneousSettings.administratorRoles];
+                break;
+            case RoleType.Moderator:
+                roleArray = [
+                    ...miscellaneousSettings.managerRoles,
+                    ...miscellaneousSettings.administratorRoles,
+                    ...miscellaneousSettings.moderatorRoles,
+                ];
+                break;
+            case RoleType.Helper:
+                roleArray = [
+                    ...miscellaneousSettings.managerRoles,
+                    ...miscellaneousSettings.administratorRoles,
+                    ...miscellaneousSettings.moderatorRoles,
+                    ...miscellaneousSettings.helperRoles,
+                ];
+                break;
+            default:
+                logger.error('Invalid requiredRole:', requiredRole);
+                return false;
+        }
+
+        const userRoles = member.roles.cache.map((role) => role.id);
+        const hasPermission = roleArray.some((roleId) => userRoles.includes(roleId));
+
+        return hasPermission;
+    } catch (error) {
+        logger.error('Error checking permission:', error);
+        return false;
+    }
+}
+
 /**
  *
  * @param guild
@@ -54,8 +119,8 @@ export async function getWebhook(channel: TextChannel, webhookName: string): Pro
  * @returns {ColorResolvable}
  */
 export async function getGuildTheme(guild: Guild, client: DiscordClient): Promise<ColorResolvable> {
-    const guildSettings = await prisma.guild.findUnique({ where: { guildId: guild.id } });
-    return guildSettings?.themeColor ?? client.config.colors.theme;
+    const miscellaneousSettings = await prisma.miscellaneous.findUnique({ where: { guildId: guild.id } });
+    return miscellaneousSettings?.themeColor ?? client.config.colors.theme;
 }
 
 /**
@@ -71,7 +136,7 @@ export async function getFooter(
     embed: EmbedBuilder,
 ): Promise<EmbedBuilder | null> {
     const guildSettings = await prisma.guild.findUnique({ where: { guildId: guild.id } });
-    if (guildSettings?.isMembership) {
+    if (guildSettings?.isPremium) {
         return null;
     } else {
         return embed.setFooter({
@@ -92,7 +157,7 @@ export async function getUsersCount(client: DiscordClient): Promise<number> {
         const results = await client.cluster.broadcastEval('this.users.cache.size');
         return results.reduce((prev, val) => prev + val, 0);
     } catch (err) {
-        console.error(err);
+        logger.error(err);
         return 0;
     }
 }
@@ -108,7 +173,7 @@ export async function getChannelsCount(client: DiscordClient): Promise<number> {
         const results = await client.cluster.broadcastEval('this.channels.cache.size');
         return results.reduce((prev, val) => prev + val, 0);
     } catch (err) {
-        console.error(err);
+        logger.error(err);
         return 0;
     }
 }
@@ -124,7 +189,7 @@ export async function getGuildsCount(client: DiscordClient): Promise<number> {
         const results = await client.cluster.broadcastEval('this.guilds.cache.size');
         return results.reduce((prev, val) => prev + val, 0);
     } catch (err) {
-        console.error(err);
+        logger.error(err);
         return 0;
     }
 }

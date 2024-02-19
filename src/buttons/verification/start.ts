@@ -33,7 +33,7 @@ const button: ButtonInterface = {
             return interaction.reply({
                 embeds: [
                     embed.setDescription(
-                        i18next.t('guildGate.start.failedToFetchUser', {
+                        i18next.t('verification.start.failedToFetchUser', {
                             user_mention: userMention(member?.user.id!),
                             ns: 'modules',
                         }),
@@ -43,24 +43,23 @@ const button: ButtonInterface = {
             });
         const settings = await client.db.guild.findUnique({
             where: { guildId: guildId },
-            select: { guildGate: true },
+            select: { verification: true, joinGate: true },
         });
         if (!settings)
             return interaction.reply({
-                embeds: [embed.setDescription(i18next.t('guildGate.start.failedToGetData', { ns: 'modules' }))],
+                embeds: [embed.setDescription(i18next.t('verification.start.failedToGetData', { ns: 'modules' }))],
                 ephemeral: true,
             });
-        if (!settings.guildGate)
+        if (!settings.verification)
             return interaction.reply({
-                embeds: [embed.setDescription(i18next.t('guildGate.start.failedToGetData', { ns: 'modules' }))],
+                embeds: [embed.setDescription(i18next.t('verification.start.failedToGetData', { ns: 'modules' }))],
                 ephemeral: true,
             });
-        if (!settings.guildGate.isEnabled)
+        if (!settings.verification.isEnabled)
             return interaction.reply({
-                embeds: [embed.setDescription(i18next.t('guildGate.start.moduleIsTurnedOff', { ns: 'modules' }))],
+                embeds: [embed.setDescription(i18next.t('verification.start.moduleIsTurnedOff', { ns: 'modules' }))],
                 ephemeral: true,
             });
-        if (!settings.guildGate.welcomeOnVerification && settings.guildGate.welcomeOnVerificationChannel) return;
 
         const captcha = new CaptchaGenerator()
             .setDimension(150, 450)
@@ -76,7 +75,7 @@ const button: ButtonInterface = {
         });
 
         await interaction.reply({
-            embeds: [embed.setDescription(i18next.t('guildGate.start.sentDMToUser', { ns: 'modules' }))],
+            embeds: [embed.setDescription(i18next.t('verification.start.sentDMToUser', { ns: 'modules' }))],
             ephemeral: true,
         });
         await fetchedMember
@@ -84,18 +83,18 @@ const button: ButtonInterface = {
                 embeds: [
                     embed
                         .setDescription(
-                            i18next.t('guildGate.start.captchaMessage.description', {
+                            i18next.t('verification.start.captchaMessage.description', {
                                 guild_name: guild.name,
                                 ns: 'modules',
                             }),
                         )
                         .addFields({
-                            name: i18next.t('guildGate.start.captchaMessage.fields.name', { ns: 'modules' }),
+                            name: i18next.t('verification.start.captchaMessage.fields.name', { ns: 'modules' }),
                             value: [
-                                i18next.t('guildGate.start.captchaMessage.fields.value1', { ns: 'modules' }),
-                                i18next.t('guildGate.start.captchaMessage.fields.value2', { ns: 'modules' }),
-                                i18next.t('guildGate.start.captchaMessage.fields.value3', { ns: 'modules' }),
-                                i18next.t('guildGate.start.captchaMessage.fields.value4', { ns: 'modules' }),
+                                i18next.t('verification.start.captchaMessage.fields.value1', { ns: 'modules' }),
+                                i18next.t('verification.start.captchaMessage.fields.value2', { ns: 'modules' }),
+                                i18next.t('verification.start.captchaMessage.fields.value3', { ns: 'modules' }),
+                                i18next.t('verification.start.captchaMessage.fields.value4', { ns: 'modules' }),
                             ].join('\n'),
                         })
                         .setImage(`attachment://captcha.png`),
@@ -107,7 +106,7 @@ const button: ButtonInterface = {
                     embeds: [
                         embed
                             .setDescription(
-                                i18next.t('guildGate.start.disabledDirectMessages', {
+                                i18next.t('verification.start.disabledDirectMessages', {
                                     guild_name: guild.name,
                                     ns: 'modules',
                                 }),
@@ -131,8 +130,8 @@ const button: ButtonInterface = {
             const memberInput = msg.content.toLowerCase();
 
             if (memberInput === captcha.text?.toLowerCase()) {
-                const roleAddIds = settings.guildGate?.roleAddOnVerification ?? [];
-                const roleRemoveIds = settings.guildGate?.roleRemoveOnVerification ?? [];
+                const roleAddIds = settings.verification?.rolesToAddOnVerification ?? [];
+                const roleRemoveIds = settings.verification?.rolesToRemoveOnVerification ?? [];
                 const rolesToAdd = Array.isArray(roleAddIds)
                     ? (roleAddIds.map((roleId) => guild.roles.cache.get(roleId)).filter(Boolean) as Role[])
                     : [];
@@ -149,14 +148,14 @@ const button: ButtonInterface = {
                         await fetchedMember.roles.remove(rolesToRemove);
                     }
 
-                    if (settings.guildGate?.welcomeOnVerification && settings.guildGate.welcomeOnVerificationChannel) {
+                    if (settings.verification?.welcomeOnVerification && settings.verification.welcomeOnVerificationChannel) {
                         const welcomeChannel = guild.channels.cache.get(
-                            settings.guildGate.welcomeOnVerificationChannel,
+                            settings.verification.welcomeOnVerificationChannel,
                         ) as TextChannel;
 
                         const guildOwner = await guild.fetchOwner();
 
-                        let welcomeMessage = settings.guildGate.welcomeMessage
+                        let welcomeMessage = settings.verification.welcomeOnVerificationMessage
                             .replaceAll('{{user}}', `${userMention(fetchedMember.user.id)}`)
                             .replaceAll('{{user_name}}', `${fetchedMember.user.username}`)
                             .replaceAll('{{user_id}}', `${fetchedMember.user.id}`)
@@ -181,7 +180,7 @@ const button: ButtonInterface = {
                         embeds: [
                             embed
                                 .setDescription(
-                                    i18next.t('guildGate.start.verificationPassed', {
+                                    i18next.t('verification.start.verificationPassed', {
                                         guild_name: guild.name,
                                         ns: 'modules',
                                     }),
@@ -193,7 +192,7 @@ const button: ButtonInterface = {
                     fetchedMember.send({
                         embeds: [
                             embed
-                                .setDescription(i18next.t('guildGate.start.failedToFindRole', { ns: 'modules' }))
+                                .setDescription(i18next.t('verification.start.failedToFindRole', { ns: 'modules' }))
                                 .setFields(),
                         ],
                     });
@@ -210,14 +209,14 @@ const button: ButtonInterface = {
                         embeds: [
                             embed
                                 .setDescription(
-                                    i18next.t('guildGate.start.failedToPassVerification', { ns: 'modules' }),
+                                    i18next.t('verification.start.failedToPassVerification', { ns: 'modules' }),
                                 )
                                 .setFields(),
                         ],
                     })
                     .then(() => {
                         fetchedMember.kick(
-                            i18next.t('guildGate.start.kickReason', {
+                            i18next.t('verification.start.kickReason', {
                                 user_global_name: fetchedMember.user.globalName ?? fetchedMember.user.username,
                                 ns: 'modules',
                             }),
@@ -227,7 +226,7 @@ const button: ButtonInterface = {
                 fetchedMember.send({
                     embeds: [
                         embed
-                            .setDescription(i18next.t('guildGate.start.wrongCaptchaCode', { ns: 'modules' }))
+                            .setDescription(i18next.t('verification.start.wrongCaptchaCode', { ns: 'modules' }))
                             .setFields(),
                     ],
                 });

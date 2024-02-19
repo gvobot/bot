@@ -9,7 +9,7 @@ export const config: ConfigInterface = {
         token: process.env.DISCORD_BOT_TOKEN as string,
         dashboard: {
             url: process.env.DASHBOARD_URL as string,
-            key: process.env.DBD_LICENSE_KEY as string
+            key: process.env.DBD_LICENSE_KEY as string,
         },
         client: {
             id: process.env.DISCORD_BOT_ID as string,

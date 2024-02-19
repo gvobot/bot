@@ -12,10 +12,10 @@ const event: EventInterface = {
         if (!guild) return;
         if (author.bot) return;
 
-        if (message.content.includes(client.user?.id!)) {
-            const embed = new EmbedBuilder().setColor(await getGuildTheme(guild, client));
-            await getFooter(guild, client, embed);
+        const embed = new EmbedBuilder().setColor(await getGuildTheme(guild, client));
+        await getFooter(guild, client, embed);
 
+        if (message.content.includes(client.user?.id!)) {
             return message.reply({
                 embeds: [
                     embed

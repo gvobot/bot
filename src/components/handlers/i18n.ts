@@ -47,15 +47,15 @@ export function slashCommandTranslate(key: string, ns: string) {
     return translation;
 }
 
-// export async function getGuildLanguage(guild: Guild) {
-//     try {
-//         const guildSettings = await prisma.guild.findUnique({ where: { guildId: guild.id } });
-//         return guildSettings?.language ?? defaultLanguage;
-//     } catch (error) {
-//         logger.error(`Failed to fetch guild settings for guild ${guild.name}: `, error);
-//         return defaultLanguage;
-//     }
-// }
+export async function getGuildLanguage(guild: Guild) {
+    try {
+        const miscellaneousSettings = await prisma.miscellaneous.findUnique({ where: { guildId: guild.id } });
+        return miscellaneousSettings?.language ?? defaultLanguage;
+    } catch (error) {
+        logger.error(`Failed to fetch guild settings for guild ${guild.name}: `, error);
+        return defaultLanguage;
+    }
+}
 
 const guildSettingsCache: Map<string, string> = new Map();
 
@@ -68,8 +68,8 @@ export async function getGuildLanguages(guilds: Guild[]) {
             languages[guildId] = guildSettingsCache.get(guildId) ?? defaultLanguage;
         } else {
             try {
-                const guildSettings = await prisma.guild.findUnique({ where: { guildId } });
-                const language = guildSettings?.language ?? defaultLanguage;
+                const miscellaneousSettings = await prisma.miscellaneous.findUnique({ where: { guildId } });
+                const language = miscellaneousSettings?.language ?? defaultLanguage;
                 languages[guildId] = language;
                 guildSettingsCache.set(guildId, language);
             } catch (error) {
@@ -89,11 +89,41 @@ export async function changeLanguage(lng: string) {
 }
 
 export async function loadLanguageForGuilds(guilds: Guild[]) {
-    const guildIds = guilds.map((guild) => guild.id);
-    const guildSettings = await prisma.guild.findMany({ where: { guildId: { in: guildIds } } });
-
-    for (const setting of guildSettings) {
-        const lng = setting?.language || defaultLanguage;
-        await changeLanguage(lng);
+    for (const guild of guilds) {
+        try {
+            const existingGuild = await prisma.miscellaneous.findUnique({ where: { guildId: guild.id } });
+            if (!existingGuild) {
+                // If the guild does not exist in the database, create it
+                await prisma.guild.upsert({
+                    where: { guildId: guild.id },
+                    create: {
+                        guildId: guild.id,
+                        isPremium: false,
+                        miscellaneous: {
+                            create: {
+                                language: defaultLanguage,
+                                themeColor: '#2b2d31',
+                                managerRoles: [],
+                                administratorRoles: [],
+                                moderatorRoles: [],
+                                helperRoles: [],
+                            },
+                        },
+                    },
+                    update: {
+                        miscellaneous: {
+                            update: {
+                                language: defaultLanguage,
+                            },
+                        },
+                    },
+                });
+            } else {
+                const lng = existingGuild.language ?? defaultLanguage;
+                await changeLanguage(lng);
+            }
+        } catch (error) {
+            logger.error(`Failed to handle guild ${guild.name}: `, error);
+        }
     }
 }

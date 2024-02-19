@@ -10,7 +10,7 @@ const command: SubCommandInterface = {
         .setNSFW(false)
         .setDescription(i18next.t('sync.description', { ns: 'commands' }))
         .setDescriptionLocalizations(slashCommandTranslate('sync.description', 'commands'))
-        .setDefaultMemberPermissions(PermissionFlagsBits.ManageGuild)
+        .setDefaultMemberPermissions(PermissionFlagsBits.SendMessages)
         .setDMPermission(false)
         .addSubcommand((subcommand) =>
             subcommand

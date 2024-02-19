@@ -21,20 +21,20 @@ const button: ButtonInterface = {
             embeds: [
                 embed
                     .setAuthor({
-                        name: i18next.t('guildGate.information.author', { guild_name: guild.name, ns: 'modules' }),
+                        name: i18next.t('verification.information.author', { guild_name: guild.name, ns: 'modules' }),
                     })
                     .setDescription(
                         [
-                            i18next.t('guildGate.information.description1', { ns: 'modules' }),
-                            i18next.t('guildGate.information.description2', {
+                            i18next.t('verification.information.description1', { ns: 'modules' }),
+                            i18next.t('verification.information.description2', {
                                 guild_name: guild.name,
                                 ns: 'modules',
                             }),
-                            i18next.t('guildGate.information.description3', { ns: 'modules' }),
-                            i18next.t('guildGate.information.description4', { ns: 'modules' }),
-                            i18next.t('guildGate.information.description5', { ns: 'modules' }),
-                            i18next.t('guildGate.information.description6', { ns: 'modules' }),
-                            i18next.t('guildGate.information.description7', { ns: 'modules' }),
+                            i18next.t('verification.information.description3', { ns: 'modules' }),
+                            i18next.t('verification.information.description4', { ns: 'modules' }),
+                            i18next.t('verification.information.description5', { ns: 'modules' }),
+                            i18next.t('verification.information.description6', { ns: 'modules' }),
+                            i18next.t('verification.information.description7', { ns: 'modules' }),
                         ].join('\n'),
                     )
                     .setImage('https://raw.githubusercontent.com/gvobot/bot/main/images/privacy-settings.png'),
