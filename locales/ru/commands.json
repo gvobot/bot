@@ -30,6 +30,22 @@
             }
         }
     },
+    "mod": {
+        "name": "mod",
+        "description": "Use moderation commands to help maintain a safe server environment",
+        "ban": {
+            "name": "ban",
+            "description": "Ban a member from the server"
+        },
+        "kick": {
+            "name": "kick",
+            "description": "Kick a member from the server"
+        },
+        "mute": {
+            "name": "mute",
+            "description": "Mute a member in the server"
+        }
+    },
     "sync": {
         "name": "синхр",
         "description": "Синхронизируйте все наши модули для работы на вашем сервере.",
