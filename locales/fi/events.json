@@ -1,0 +1,38 @@
+{
+    "interactionCreate": {
+        "command": {
+            "failedToProcess": "Failed to process this command!",
+            "cooldown": "Please wait, you are on a cooldown for `{{commandName}}`. You can use it again <t:{{expiredTimestamp}}:R>."
+        },
+        "button": {
+            "failedToProcess": "Failed to process this button!",
+            "missingPermissions": "Sorry, you don't have the required permissions to use this button.",
+            "interactionAuthorOnly": "You are not allowed to use this button.",
+            "cooldown": "Please wait, you are on a cooldown. You can use it again <t:{{expiredTimestamp}}:R>."
+        }
+    },
+    "messageCreate": {
+        "help_mention": {
+            "author": "{{client_user_name}} - Links",
+            "legal": {
+                "name": "Legal",
+                "value1": "Terms of Service",
+                "value2": "Privacy Policy"
+            },
+            "help_support": {
+                "name": "Help & Support",
+                "value1": "Donate Though PayPal",
+                "value2": "Donate Though Ko-Fi",
+                "value3": "Support Server",
+                "value4": "Web Dashboard",
+                "value5": "Commands"
+            },
+            "development_contribute": {
+                "name": "Development & Contributing",
+                "value1": "Project Overview",
+                "value2": "Translate",
+                "value3": "GitHub"
+            }
+        }
+    }
+}
