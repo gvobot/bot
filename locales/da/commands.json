@@ -5,14 +5,14 @@
     },
     "info": {
         "name": "info",
-        "description": "Get information on a guild or user",
-        "server": {
-            "name": "server",
+        "description": "Få oplysninger om en server eller bruger",
+        "guild": {
+            "name": "guild",
             "description": "Get information about this guild",
             "embed": {
                 "author": "{{guild_name}} - information",
-                "serverinformation": {
-                    "name": "Server Information:",
+                "guildinformation": {
+                    "name": "Guild Information:",
                     "value1": "**ID:** `{{guild_id}}`",
                     "value2": "**Owner:** ",
                     "value3": "**Created:** "
@@ -47,23 +47,23 @@
     },
     "mod": {
         "name": "mod",
-        "description": "Brug moderationskommandoer for at hjælpe med at opretholde et sikkert servermiljø",
+        "description": "Use moderation commands to help maintain a safe guild environment",
         "ban": {
             "name": "ban",
-            "description": "Udeluk et medlem fra server"
+            "description": "Ban a member from the guild"
         },
         "kick": {
             "name": "kick",
-            "description": "Smid et medlem ud fra serveren"
+            "description": "Kick a member from the guild"
         },
         "mute": {
             "name": "mute",
-            "description": "Gør et medlem lydløs på serveren"
+            "description": "Mute a member in the guild"
         }
     },
     "sync": {
         "name": "synkroniser",
-        "description": "Synkroniser et af vores moduler til at fungere på din server.",
+        "description": "Synchronize any of our modules to work on your guild.",
         "verification": {
             "name": "verifikation",
             "description": "Synkronisér verifikationssystemet."
