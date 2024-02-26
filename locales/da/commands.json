@@ -5,7 +5,7 @@
     },
     "info": {
         "name": "info",
-        "description": "Få oplysninger om en server eller bruger",
+        "description": "Få oplysninger om en guild eller bruger",
         "guild": {
             "name": "guild",
             "description": "Få oplysninger om denne guild",
@@ -37,8 +37,8 @@
             "name": "bruger",
             "description": "Få information om enhver bruger",
             "user": {
-                "name": "user",
-                "description": "Provide a user you want information about."
+                "name": "bruger",
+                "description": "Giv en bruger du ønsker information om."
             },
             "embed": {
                 "author": "{{user_name}} - information"
@@ -47,23 +47,23 @@
     },
     "mod": {
         "name": "mod",
-        "description": "Use moderation commands to help maintain a safe guild environment",
+        "description": "Brug moderation kommandoer til at hjælpe med at opretholde et sikkert guild miljø",
         "ban": {
             "name": "ban",
-            "description": "Ban a member from the guild"
+            "description": "Ban et medlem fra guilden"
         },
         "kick": {
             "name": "kick",
-            "description": "Kick a member from the guild"
+            "description": "Kick et medlem fra guilden"
         },
         "mute": {
             "name": "mute",
-            "description": "Mute a member in the guild"
+            "description": "Mute et medlem fra guilden"
         }
     },
     "sync": {
         "name": "synkroniser",
-        "description": "Synchronize any of our modules to work on your guild.",
+        "description": "Synkroniser et af vores moduler for at arbejde på din guild.",
         "verification": {
             "name": "verifikation",
             "description": "Synkronisér verifikationssystemet."
