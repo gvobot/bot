@@ -1,44 +1,36 @@
-'files':
-    [
-        {
-            'source': '/locales/en-US/*.json',
-            'translation': '/locales/%locale%/%original_file_name%',
-            'languages_mapping':
-                {
-                    'locale':
-                        {
-                            'ar-EG': 'ar-EG',
-                            'bg': 'bg',
-                            'zh-CN': 'zh-CN',
-                            'zh-TW': 'zh-TW',
-                            'cs': 'cs',
-                            'da': 'da',
-                            'en-GB': 'en-GB',
-                            'en-US': 'en-US',
-                            'de': 'de',
-                            'el': 'el',
-                            'fi': 'fi',
-                            'fr': 'fr',
-                            'hi': 'hi',
-                            'hr': 'hr',
-                            'hu': 'hu',
-                            'id': 'id',
-                            'it': 'it',
-                            'ja': 'ja',
-                            'ko': 'ko',
-                            'lt': 'lt',
-                            'nl': 'nl',
-                            'no': 'no',
-                            'pt-BR': 'pt-BR',
-                            'pl': 'pl',
-                            'ro': 'ro',
-                            'ru': 'ru',
-                            'es-ES': 'es-ES',
-                            'sv-SE': 'sv-SE',
-                            'th': 'th',
-                            'uk': 'uk',
-                            'vi': 'vi',
-                        },
-                },
-        },
-    ]
+files:
+  - source: /locales/en-US/*.json
+    translation: /locales/%locale%/%original_file_name%
+    languages_mapping:
+      locale:
+        ar-EG: ar-EG
+        bg: bg
+        zh-CN: zh-CN
+        zh-TW: zh-TW
+        cs: cs
+        da: da
+        en-GB: en-GB
+        en-US: en-US
+        de: de
+        el: el
+        fi: fi
+        fr: fr
+        hi: hi
+        hr: hr
+        hu: hu
+        id: id
+        it: it
+        ja: ja
+        ko: ko
+        lt: lt
+        nl: nl
+        'no': 'no'
+        pt-BR: pt-BR
+        pl: pl
+        ro: ro
+        ru: ru
+        es-ES: es-ES
+        sv-SE: sv-SE
+        th: th
+        uk: uk
+        vi: vi
