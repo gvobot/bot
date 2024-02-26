@@ -36,8 +36,8 @@
         "user": {
             "name": "user",
             "description": "Get information about any user",
-            "target": {
-                "name": "target",
+            "user": {
+                "name": "user",
                 "description": "Provide a user you want information about."
             },
             "embed": {
