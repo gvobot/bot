@@ -3,52 +3,67 @@
         "name": "ping",
         "description": "Controleer of de bot leeft"
     },
-    "serverinfo": {
-        "name": "serverinfo",
-        "description": "Krijg informatie over deze gilde",
-        "embed": {
-            "author": "{{guild_name}} - gegevens",
-            "serverinformation": {
-                "name": "Server informatie:",
-                "value1": "**ID:** `{{guild_id}}`",
-                "value2": "**Eigenaar:** ",
-                "value3": "**Aangemaakt:** "
+    "info": {
+        "name": "info",
+        "description": "Get information on a guild or user",
+        "guild": {
+            "name": "guild",
+            "description": "Get information about this guild",
+            "embed": {
+                "author": "{{guild_name}} - information",
+                "guildinformation": {
+                    "name": "Guild Information:",
+                    "value1": "**ID:** `{{guild_id}}`",
+                    "value2": "**Owner:** ",
+                    "value3": "**Created:** "
+                },
+                "members": {
+                    "name": "Members:",
+                    "value1": "**Members:** `{{guild_totalMembers}}`",
+                    "value2": "**Humans:** `{{guild_totalHumanMembers}}`",
+                    "value3": "**Bots:** `{{guild_bots}}`"
+                },
+                "newMembers": {
+                    "name": "**New Members:**",
+                    "value1": "**Last 12 Months:** `{{guild_lastMembers12Months}}`",
+                    "value2": "**Last 6 Months:** `{{guild_lastMembers6Months}}`",
+                    "value3": "**Last 30 Days:** `{{guild_lastMembers30Days}}`",
+                    "value4": "**Last 7 Days:** `{{guild_lastMembers7days}}`",
+                    "value5": "**Last 24 Hours:** `{{guild_lastMembers24hrs}}`"
+                }
+            }
+        },
+        "user": {
+            "name": "user",
+            "description": "Get information about any user",
+            "user": {
+                "name": "user",
+                "description": "Provide a user you want information about."
             },
-            "members": {
-                "name": "Leden:",
-                "value1": "**Leden:** `{{guild_totalMembers}}`",
-                "value2": "**Mensen:** `{{guild_totalHumanMembers}}`",
-                "value3": "**Bots:** `{{guild_bots}}`"
-            },
-            "newMembers": {
-                "name": "**Nieuwe leden:**",
-                "value1": "**Laatste 12 maanden:** `{{guild_lastMembers12Months}}`",
-                "value2": "**Laatste 6 maanden:** `{{guild_lastMembers6Months}}`",
-                "value3": "**Laatste 30 dagen:** `{{guild_lastMembers30Days}}`",
-                "value4": "**Laatste 7 dagen:** `{{guild_lastMembers7days}}`",
-                "value5": "**Laatste 24 uur:** `{{guild_lastMembers24hrs}}`"
+            "embed": {
+                "author": "{{user_name}} - information"
             }
         }
     },
     "mod": {
         "name": "mod",
-        "description": "Use moderation commands to help maintain a safe server environment",
+        "description": "Use moderation commands to help maintain a safe guild environment",
         "ban": {
             "name": "ban",
-            "description": "Ban a member from the server"
+            "description": "Ban a member from the guild"
         },
         "kick": {
             "name": "kick",
-            "description": "Kick a member from the server"
+            "description": "Kick a member from the guild"
         },
         "mute": {
             "name": "mute",
-            "description": "Mute a member in the server"
+            "description": "Mute a member in the guild"
         }
     },
     "sync": {
         "name": "sync",
-        "description": "Synchroniseer een van onze modules om op uw server te werken.",
+        "description": "Synchronize any of our modules to work on your guild.",
         "verification": {
             "name": "verificatie",
             "description": "Synchroniseer het verificatiesysteem."
