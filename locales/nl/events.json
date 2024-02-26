@@ -1,0 +1,38 @@
+{
+    "interactionCreate": {
+        "command": {
+            "failedToProcess": "Kan deze opdracht niet verwerken!",
+            "cooldown": "Een ogenblik geduld, je bent in een cooldown voor `{{commandName}}`. Je kan het weer gebruiken <t:{{expiredTimestamp}}:R>."
+        },
+        "button": {
+            "failedToProcess": "Kan deze Button niet verwerken!",
+            "missingPermissions": "Sorry, je hebt niet de vereiste rechten om deze Button te gebruiken.",
+            "interactionAuthorOnly": "Je hebt geen toestemming om deze Button te gebruiken.",
+            "cooldown": "Even geduld, je zit op een cooldown. Je kan het opnieuw gebruiken <t:{{expiredTimestamp}}:R>."
+        }
+    },
+    "messageCreate": {
+        "help_mention": {
+            "author": "{{client_user_name}} - Links",
+            "legal": {
+                "name": "Legaal",
+                "value1": "Servicevoorwaarden",
+                "value2": "Privacybeleid"
+            },
+            "help_support": {
+                "name": "Hulp en Support",
+                "value1": "Doneer via PayPal",
+                "value2": "Doneer via Ko-Fi",
+                "value3": "Ondersteunings Server",
+                "value4": "Web Dashboard",
+                "value5": "Opdrachten"
+            },
+            "development_contribute": {
+                "name": "Ontwikkeling & bijdragen",
+                "value1": "Projectoverzicht",
+                "value2": "Vertalen",
+                "value3": "GitHub"
+            }
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "interactionCreate": {
+        "command": {
+            "failedToProcess": "Mislykkedes at behandle denne kommando!",
+            "cooldown": "Vent venligst, du er på en nedkøling for `{{commandName}}`. Du kan bruge det igen <t:{{expiredTimestamp}}:R>."
+        },
+        "button": {
+            "failedToProcess": "Mislykkedes at behandle denne kommando!",
+            "missingPermissions": "Beklager, du har ikke de nødvendige tilladelser til at bruge denne knap.",
+            "interactionAuthorOnly": "Du har ikke tilladelse til at bruge denne knap.",
+            "cooldown": "Vent venligst, du er på en nedkøling. Du kan bruge det igen <t:{{expiredTimestamp}}:R>."
+        }
+    },
+    "messageCreate": {
+        "help_mention": {
+            "author": "{{client_user_name}} - Links",
+            "legal": {
+                "name": "Juridisk",
+                "value1": "Servicevilkår",
+                "value2": "Privatlivspolitik"
+            },
+            "help_support": {
+                "name": "Hjælp Og Support",
+                "value1": "Doner Igennem PayPal",
+                "value2": "Doner Igennem Ko-Fi",
+                "value3": "Support Server",
+                "value4": "Web Kontrolpanel",
+                "value5": "Kommandoer"
+            },
+            "development_contribute": {
+                "name": "Udvikling Og Bidrag",
+                "value1": "Projekt Oversigt",
+                "value2": "Oversæt",
+                "value3": "GitHub"
+            }
+        }
+    }
+}
