@@ -6,13 +6,13 @@
     "info": {
         "name": "info",
         "description": "Get information on a guild or user",
-        "server": {
-            "name": "server",
+        "guild": {
+            "name": "guild",
             "description": "Get information about this guild",
             "embed": {
                 "author": "{{guild_name}} - information",
-                "serverinformation": {
-                    "name": "Server Information:",
+                "guildinformation": {
+                    "name": "Guild Information:",
                     "value1": "**ID:** `{{guild_id}}`",
                     "value2": "**Owner:** ",
                     "value3": "**Created:** "
@@ -47,23 +47,23 @@
     },
     "mod": {
         "name": "mod",
-        "description": "Use moderation commands to help maintain a safe server environment",
+        "description": "Use moderation commands to help maintain a safe guild environment",
         "ban": {
             "name": "ban",
-            "description": "Ban a member from the server"
+            "description": "Ban a member from the guild"
         },
         "kick": {
             "name": "kick",
-            "description": "Kick a member from the server"
+            "description": "Kick a member from the guild"
         },
         "mute": {
             "name": "mute",
-            "description": "Mute a member in the server"
+            "description": "Mute a member in the guild"
         }
     },
     "sync": {
         "name": "sync",
-        "description": "Synchronisieren Sie eines unserer Module, um auf Ihrem Server zu arbeiten.",
+        "description": "Synchronize any of our modules to work on your guild.",
         "verification": {
             "name": "verifikation",
             "description": "Synchronisiere das Verifizierungssystem."
