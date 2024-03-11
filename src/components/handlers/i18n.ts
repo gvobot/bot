@@ -89,41 +89,49 @@ export async function changeLanguage(lng: string) {
 }
 
 export async function loadLanguageForGuilds(guilds: Guild[]) {
-    for (const guild of guilds) {
-        try {
-            const existingGuild = await prisma.miscellaneous.findUnique({ where: { guildId: guild.id } });
-            if (!existingGuild) {
-                // If the guild does not exist in the database, create it
-                await prisma.guild.upsert({
-                    where: { guildId: guild.id },
-                    create: {
-                        guildId: guild.id,
-                        isPremium: false,
-                        miscellaneous: {
-                            create: {
-                                language: defaultLanguage,
-                                themeColor: '#2b2d31',
-                                managerRoles: [],
-                                administratorRoles: [],
-                                moderatorRoles: [],
-                                helperRoles: [],
-                            },
-                        },
-                    },
-                    update: {
-                        miscellaneous: {
-                            update: {
-                                language: defaultLanguage,
-                            },
-                        },
-                    },
-                });
-            } else {
-                const lng = existingGuild.language ?? defaultLanguage;
-                await changeLanguage(lng);
-            }
-        } catch (error) {
-            logger.error(`Failed to handle guild ${guild.name}: `, error);
+    const guildIds = guilds.map((guild) => guild.id);
+
+    try {
+        const miscellaneousSettings = await prisma.miscellaneous.findMany({ where: { guildId: { in: guildIds } } });
+
+        for (const setting of miscellaneousSettings) {
+            const lng = setting?.language ?? defaultLanguage;
+            await changeLanguage(lng);
+            console.log(lng);
         }
+
+        const existingGuildIds = miscellaneousSettings.map((setting) => setting.guildId);
+        const missingGuildIds = guildIds.filter((id) => !existingGuildIds.includes(id));
+
+        for (const missingGuildId of missingGuildIds) {
+            await prisma.guild.upsert({
+                where: { guildId: missingGuildId },
+                create: {
+                    guildId: missingGuildId,
+                    isPremium: false,
+                    miscellaneous: {
+                        create: {
+                            language: defaultLanguage,
+                            themeColor: '#2b2d31',
+                            managerRoles: [],
+                            administratorRoles: [],
+                            moderatorRoles: [],
+                            helperRoles: [],
+                        },
+                    },
+                },
+                update: {
+                    miscellaneous: {
+                        update: {
+                            language: defaultLanguage,
+                        },
+                    },
+                },
+            });
+
+            await changeLanguage(defaultLanguage);
+        }
+    } catch (error) {
+        logger.error(`Failed to handle guilds: `, error);
     }
 }

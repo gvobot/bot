@@ -2,6 +2,8 @@ import { DiscordClient } from '../../bot.js';
 import { EventInterface } from '../../components/typings/index.js';
 import { Events, ChatInputCommandInteraction } from 'discord.js';
 import { defaultLanguage } from '../../config.js';
+import { changeLanguage } from '../../components/handlers/exports.js';
+
 const event: EventInterface = {
     name: Events.InteractionCreate,
     options: { once: false, rest: false },
@@ -13,6 +15,7 @@ const event: EventInterface = {
             where: { guildId: guildId },
             select: { miscellaneous: true },
         });
+        changeLanguage(guildSettings?.miscellaneous?.language! ?? defaultLanguage);
         if (!guildSettings) {
             await client.db.guild.upsert({
                 where: { guildId: guildId },

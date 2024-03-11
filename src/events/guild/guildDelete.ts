@@ -12,11 +12,11 @@ const event: EventInterface = {
                 where: { guildId: guild.id },
             });
             if (existingGuild) {
-                await client.db.guild.delete({ where: { guildId: guild.id } });
                 await client.db.miscellaneous.delete({ where: { guildId: guild.id } });
                 await client.db.moderation.delete({ where: { guildId: guild.id } });
                 await client.db.verification.delete({ where: { guildId: guild.id } });
                 await client.db.joinGate.delete({ where: { guildId: guild.id } });
+                await client.db.guild.delete({ where: { guildId: guild.id } });
                 logger.info(`Guild ${guild.name} (${guild.id}) removed from the database.`);
             }
         } catch (error) {
