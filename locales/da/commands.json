@@ -24,7 +24,7 @@
                     "value3": "**Bots:** `{{guild_bots}}`"
                 },
                 "newMembers": {
-                    "name": "**Nye Medlemmer:**",
+                    "name": "Nye Medlemmer:",
                     "value1": "**Seneste 12 Måneder:** `{{guild_lastMembers12Months}}`",
                     "value2": "**Seneste 6 Måneder:** `{{guild_lastMembers6Months}}`",
                     "value3": "**Seneste 30 Dage:** `{{guild_lastMembers30Days}}`",
@@ -41,7 +41,21 @@
                 "description": "Angiv en bruger du ønsker information om."
             },
             "embed": {
-                "author": "{{user_name}} - information"
+                "author": "{{user_username}} - information",
+                "userInformation": {
+                    "name": "Brugeroplysninger:",
+                    "identifier": "**ID:** ",
+                    "username": "**Brugernavn:** ",
+                    "created": "**Oprettet:** "
+                },
+                "memberInformation": {
+                    "name": "Medlem Information:",
+                    "description": "Tilmeldt som **{{joinPosition}}** medlem af denne guild.",
+                    "nickname": "**Kaldenavn:** ",
+                    "noNickname": "Intet kaldenavn.",
+                    "joined": "**Tilsluttet:** ",
+                    "topRoles": "**Øverste Roller:** "
+                }
             }
         }
     },

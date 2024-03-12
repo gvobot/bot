@@ -24,7 +24,7 @@
                     "value3": "**Bots:** `{{guild_bots}}`"
                 },
                 "newMembers": {
-                    "name": "**New Members:**",
+                    "name": "New Members:",
                     "value1": "**Last 12 Months:** `{{guild_lastMembers12Months}}`",
                     "value2": "**Last 6 Months:** `{{guild_lastMembers6Months}}`",
                     "value3": "**Last 30 Days:** `{{guild_lastMembers30Days}}`",
@@ -41,7 +41,21 @@
                 "description": "Provide a user you want information about."
             },
             "embed": {
-                "author": "{{user_name}} - information"
+                "author": "{{user_username}} - information",
+                "userInformation": {
+                    "name": "User Information:",
+                    "identifier": "**ID:** ",
+                    "username": "**Username:** ",
+                    "created": "**Created:** "
+                },
+                "memberInformation": {
+                    "name": "Member Information:",
+                    "description": "Joined as the **{{joinPosition}}** member of this guild.",
+                    "nickname": "**Nickname:** ",
+                    "noNickname": "No nickname.",
+                    "joined": "**Joined:** ",
+                    "topRoles": "**Top Roles:** "
+                }
             }
         }
     },
