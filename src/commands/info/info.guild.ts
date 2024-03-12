@@ -38,7 +38,7 @@ const command: SubCommand = {
                                 i18next.t('info.guild.embed.guildinformation.value1', {
                                     guild_id: guildId,
                                     ns: 'commands',
-                                }) + `\`${guildId}\``,
+                                }),
                                 i18next.t('info.guild.embed.guildinformation.value2', { ns: 'commands' }) +
                                     `${userMention(guild.ownerId)}`,
                                 i18next.t('info.guild.embed.guildinformation.value3', { ns: 'commands' }) +
