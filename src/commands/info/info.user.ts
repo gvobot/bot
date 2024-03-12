@@ -1,6 +1,6 @@
 import { DiscordClient } from '../../bot.js';
 import { SubCommand } from '../../components/typings/index.js';
-import { ChatInputCommandInteraction, EmbedBuilder, GuildMember, PermissionFlagsBits, userMention } from 'discord.js';
+import { ChatInputCommandInteraction, EmbedBuilder, GuildMember } from 'discord.js';
 import { getGuildTheme, getFooter } from '../../components/helpers/exports.js';
 import i18next from '../../components/handlers/i18n.js';
 
