@@ -20,10 +20,10 @@
                 "value2": "Privatlivspolitik"
             },
             "support": {
-                "name": "Support",
-                "value1": "Support Server",
-                "value2": "Web Dashboard",
-                "value3": "Commands"
+                "name": "Hjælp",
+                "value1": "Hjælpe Server",
+                "value2": "Web Kontrolpanel",
+                "value3": "Kommandoer"
             },
             "development_contribute": {
                 "name": "Udvikling Og Bidrag",
@@ -32,8 +32,8 @@
                 "value3": "GitHub"
             },
             "donate": {
-                "name": "Donate",
-                "value1": "Buy a Package!"
+                "name": "Donér",
+                "value1": "Køb en pakke!"
             }
         }
     }
