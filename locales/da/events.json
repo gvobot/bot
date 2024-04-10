@@ -19,19 +19,21 @@
                 "value1": "Servicevilkår",
                 "value2": "Privatlivspolitik"
             },
-            "help_support": {
-                "name": "Hjælp Og Support",
-                "value1": "Doner Igennem PayPal",
-                "value2": "Doner Igennem Ko-Fi",
-                "value3": "Support Server",
-                "value4": "Web Kontrolpanel",
-                "value5": "Kommandoer"
+            "support": {
+                "name": "Hjælp",
+                "value1": "Hjælpe Server",
+                "value2": "Web Kontrolpanel",
+                "value3": "Kommandoer"
             },
             "development_contribute": {
                 "name": "Udvikling Og Bidrag",
                 "value1": "Projekt Oversigt",
                 "value2": "Oversæt",
                 "value3": "GitHub"
+            },
+            "donate": {
+                "name": "Donér",
+                "value1": "Køb en pakke!"
             }
         }
     }
