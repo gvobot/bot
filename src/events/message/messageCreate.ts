@@ -77,48 +77,53 @@ const event: EventInterface = {
                                 value: [
                                     hyperlink(
                                         i18next.t('messageCreate.help_mention.help_support.value1', { ns: 'events' }),
-                                        'https://gvobot.app/paypal',
-                                    ),
-                                    hyperlink(
-                                        i18next.t('messageCreate.help_mention.help_support.value2', { ns: 'events' }),
-                                        'https://gvobot.app/kofi',
-                                    ),
-                                    hyperlink(
-                                        i18next.t('messageCreate.help_mention.help_support.value3', { ns: 'events' }),
                                         'https://gvobot.app/discord',
                                     ),
                                     hyperlink(
-                                        i18next.t('messageCreate.help_mention.help_support.value4', { ns: 'events' }),
+                                        i18next.t('messageCreate.help_mention.help_support.value2', { ns: 'events' }),
                                         'https://dash.gvobot.app/',
                                     ),
                                     hyperlink(
-                                        i18next.t('messageCreate.help_mention.help_support.value5', { ns: 'events' }),
+                                        i18next.t('messageCreate.help_mention.help_support.value3', { ns: 'events' }),
                                         'https://dash.gvobot.app/commands',
                                     ),
                                 ].join('\n'),
                             },
                             {
-                                name: i18next.t('messageCreate.help_mention.development_contribute.name', {
+                                name: i18next.t('messageCreate.help_mention.support.name', {
                                     ns: 'events',
                                 }),
                                 value: [
                                     hyperlink(
-                                        i18next.t('messageCreate.help_mention.development_contribute.value1', {
+                                        i18next.t('messageCreate.help_mention.support.value1', {
                                             ns: 'events',
                                         }),
                                         'https://github.com/users/duckodas/projects/1',
                                     ),
                                     hyperlink(
-                                        i18next.t('messageCreate.help_mention.development_contribute.value2', {
+                                        i18next.t('messageCreate.help_mention.support.value2', {
                                             ns: 'events',
                                         }),
                                         'https://crowdin.com/project/gvobot',
                                     ),
                                     hyperlink(
-                                        i18next.t('messageCreate.help_mention.development_contribute.value3', {
+                                        i18next.t('messageCreate.help_mention.support.value3', {
                                             ns: 'events',
                                         }),
                                         'https://github.com/gvobot/discord',
+                                    ),
+                                ].join('\n'),
+                            },
+                            {
+                                name: i18next.t('messageCreate.help_mention.donate.name', {
+                                    ns: 'events',
+                                }),
+                                value: [
+                                    hyperlink(
+                                        i18next.t('messageCreate.help_mention.donate.value1', {
+                                            ns: 'events',
+                                        }),
+                                        'https://coffeebots.xyz/store',
                                     ),
                                 ].join('\n'),
                             },
