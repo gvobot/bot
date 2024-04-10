@@ -19,19 +19,21 @@
                 "value1": "Terms of Service",
                 "value2": "Privacy Policy"
             },
-            "help_support": {
-                "name": "Help & Support",
-                "value1": "Donate Though PayPal",
-                "value2": "Donate Though Ko-Fi",
-                "value3": "Support Server",
-                "value4": "Web Dashboard",
-                "value5": "Commands"
+            "support": {
+                "name": "Support",
+                "value1": "Support Server",
+                "value2": "Web Dashboard",
+                "value3": "Commands"
             },
             "development_contribute": {
                 "name": "Development & Contributing",
                 "value1": "Project Overview",
                 "value2": "Translate",
                 "value3": "GitHub"
+            },
+            "donate": {
+                "name": "Donate",
+                "value1": "Buy a Package!"
             }
         }
     }
